@@ -10,10 +10,12 @@ body {
     background-color: black;
     color: black;
 }
+
 hr{
   margin-left:  300px;
   margin-right: 300px;
 }
+
 /* -------------------Header,Logo,Navbar---------------------------- */
 
 header {
@@ -97,6 +99,7 @@ header {
     animation: slideTop 1.5s ease forwards;
     font-family: serif;
     color: #8ad7bc;
+    line-height: 30px;
 }
 .home-content h2 {
     font-size: 20px;
@@ -138,7 +141,7 @@ header {
   background: transparent;
   border: solid #db3e4d 2px;
   color: #db3e4d;
-  box-shadow: 0 0 35px #db3e4d;
+  box-shadow: 0 0 25px #db3e4d;
 }
 
 /* -------------------------------------------------- */
@@ -232,7 +235,7 @@ header {
   background: transparent;
   border: solid #8ad7bc 2px;
   color: #8ad7bc;
-  box-shadow: 0 0 35px #8ad7bc;
+  box-shadow: 0 0 25px #8ad7bc;
 }
 
 
@@ -265,7 +268,7 @@ header {
   background: #273772;
   border: solid #8ad7bc 2px;
   color: #8ad7bc;
-  box-shadow: 0 0 30px #8ad7bc;
+  box-shadow: 0 0 25px #8ad7bc;
 }
 
 .card  {
@@ -308,6 +311,7 @@ header {
   animation: slideTop 1s ease forwards;
   transition: 0.5s ease;
   text-decoration: none;
+  font-style: italic;
 }
 
 .card a:hover{
@@ -330,12 +334,20 @@ header {
   flex-wrap: wrap;
 }
 
+
 /* -------------------------------------------------- */
 
 
 
 /* -------------------Contact---------------------------- */
-
+.contact{
+  margin-left: auto;
+  margin-right: auto;
+  border: black double 10px;
+  width: fit-content;
+  background: rgba(255,255,255,0.1);
+  padding-top: 10px;
+}
 .btn-box {
     display: inline-block;
     padding: 28px 30px;
@@ -359,7 +371,7 @@ header {
     background: transparent;
     border: solid #db3e4d 2px;
     color: #db3e4d;
-    box-shadow: 0 0 35px #db3e4d;
+    box-shadow: 0 0 15px #db3e4d;
 }
 
 .image {
@@ -368,20 +380,36 @@ header {
   transition: .5s;
   animation-delay: .1s;
   border-radius:10%;
+  transition-duration: 1.5s;
+  animation: slideRight 1s ease forwards;
 }
 
 .image:hover{
-  box-shadow: 0 0 30px #db3e4d;
+  box-shadow: 0 0 20px #db3e4d;
+  transition-duration: .3s;
+}
+
+
+.wd{ 
+  /* border: #8ad7bc solid 3px; */
+  color:#db3e4d;
+  padding-top: 5px;
+  width: 250px;
+  margin-top: 20px;
+  transition-duration: 1.5s;
+  animation: slideTop 1s ease forwards;
+}
+.wd:hover{
+  transition-duration: .3s;
 }
 
 .card0 {
-    background-color: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 25px 25px;
     gap: 30px;
-    box-shadow: 20px 0px 20px ;
+    /* box-shadow: 20px 0px 20px ; */
     background-color: transparent;
   }
 
@@ -521,6 +549,123 @@ header {
         opacity: 1;
     }
 }
+/* ----------------------------------------------- */
+/* 750 */
+
+/* @media (max-width:750px){
+  
+
+ .about .main .image0{
+    width: 250px;
+  }
+ .about .main .about-text{
+    width: 400px;
+    font-size: 10px;
+  }
+
+
+  .cards .content .card{
+    width: 500px;
+    height: 375px;
+    display: block;
+
+  }
+  video{
+    width: 450px;
+    justify-content: center;
+    padding-left: 40px ;
+  }
+
+} */
+
+/* -------------------------------------------- */
+  /* 615 */
+
+/* @media (max-width:615px){ 
+
+  body{
+      font-size: 10px;
+   
+  }
+  .cards .content .card{
+    width: 250px;
+    height: 200px;
+    display: block;
+
+  }
+  video{
+    width: 200px;
+    justify-content: center;
+    padding-left: 35px;
+  }
+  .about .main .image0{
+    width: 250px;
+  }
+ .about .main .about-text h1{
+    width: 300px;
+    font-size: 50px;
+  }
+ .about .main .about-text p{
+    width: 300px;
+    font-size: 20px;
+    margin-left: 10px;
+  }
+  .contact h2{
+    font-size: 25px;
+  }
+  .footer .footer-title{
+    font-size: 20px;
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+} */
+/* ------------------------------------- */
+
+/* @media (max-width:575px){
+  body{
+      font-size: 10px;
+   
+  }
+  .cards .content .card{
+    width: 200px;
+    height: 200px;
+    display: block;
+
+  }
+  video{
+    width: 190px;
+    justify-content: center;
+    padding-left: 0px;
+  }
+  .about .main .image0{
+    width: 200px;
+    margin-right: 10px;
+  }
+  .about .main .image0:hover{
+    box-shadow: 0 0 15px #8ad7bc ;
+  }
+ .about .main .about-text h1{
+    width: 250px;
+    font-size: 50px;
+  }
+ .about .main .about-text p{
+    width: 250px;
+    font-size: 20px;
+  }
+  .contact h2{
+    font-size: 25px;
+  }
+  .footer .footer-title{
+    font-size: 20px;
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+} */
+/* ----------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------- */
 @media  (max-width: 768px) {
     .header .logo {
 
