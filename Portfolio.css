@@ -10,7 +10,10 @@ body {
     background-color: black;
     color: black;
 }
-
+hr{
+  margin-left:  300px;
+  margin-right: 300px;
+}
 /* -------------------Header,Logo,Navbar---------------------------- */
 
 header {
@@ -518,3 +521,105 @@ header {
         opacity: 1;
     }
 }
+@media  (max-width: 768px) {
+    .header .logo {
+
+      font-size: 30px;
+
+    }
+    .header .navbar a {
+      font-size: 25px;
+      padding-right: 10px;
+
+    }
+    .about .main .image0{
+      width: 250px;
+    }
+    .about .main .about-text p{
+      width: 300px;
+      font-size: 20px;
+      margin-left: 10px;
+    }
+    .about .main .about-text h1{
+      width: 300px;
+      font-size: 50px;
+    }
+  
+  
+    .cards .content .card{
+      width: 500px;
+      height: 375px;
+      display: block;
+  
+    }
+    video{
+      width: 450px;
+      justify-content: center;
+      padding-left: 40px ;
+    }
+    .footer .footer-title{
+      font-size: 20px;
+      width: max-content;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    hr{
+      width: 100%;
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+  }
+  /* ------------------------------------------------------------------------------
+  ------------------------------------------------------------------------------
+  ------------------------------------------------------------------------------
+  ------------------------------------------------------------------------------ */
+  @media (max-width:600px){ 
+
+    body{
+        font-size: 10px;
+     
+    }
+    .header .navbar a {
+      font-size: 20px;
+      padding-right: 20px;
+
+    }
+    .cards .content .card{
+      width: 400px;
+      height: 300px;
+      display: block;
+    }
+    video{
+      width: 350px;
+      justify-content: center;
+      padding-left: 35px;
+    }
+    .about .main .image0{
+      width: 200px;
+      margin-left: 30px;
+    }
+   .about .main .about-text h1{
+      width: 300px;
+      font-size: 50px;
+    }
+   .about .main .about-text p{
+      width: 250px;
+      font-size: 20px;
+      margin-left: 20px;
+    }
+    .contact h2{
+      font-size: 25px;
+    }
+    .footer .footer-title{
+      font-size: 20px;
+      width: max-content;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    hr{
+      width: 100%;
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+  }
+
