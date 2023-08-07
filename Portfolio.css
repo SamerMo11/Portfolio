@@ -113,6 +113,10 @@ header {
     padding: 70px 10% 0%;
 }
 
+.home .home-content .h1 h1 span {
+  color: #5cd2c6;
+}
+
 .home-content {
     max-width: 600px;
 }
