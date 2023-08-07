@@ -31,10 +31,17 @@
   <section id="home" class="home">
     <div id="home-content" class="home-content">
         <h2>Hello, I’m</h2>
-          <h1>Samer Mohamed</h1>
-      <p>I’m a Web Developer.
-         <br> And I am  working as a freelancer
-      </p>
+        <div class="h1"><h1><span class="auto-type"></span></h1> </div>
+          <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+          <script>
+            var typed = new Typed(".auto-type",{
+              strings : ['Samer Mohamed','Web Developer'],
+              typeSpeed :100,
+              backSpeed :100,
+              loop: true,
+            })
+          </script>
+      <p> And I am  working as a freelancer</p>
       <div class="about-btn2"><a href="#projects" class="about-btn"> VIEW MY WORK</a></div>
     </div>
   </section>
