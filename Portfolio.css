@@ -1449,14 +1449,14 @@ translate: 0px 10px  ;
 
   animation: samer 2s linear  infinite alternate ;
 }
-@keyframes samer{
+/* @keyframes samer{
   from{
     margin-bottom: 60px;
   }
   to{
     margin-top: 20px;
   }
-}
+} */
 .image0:hover{
   box-shadow: 0 0 30px var(--third-color);
   border: var(--third-color) solid 5px;
