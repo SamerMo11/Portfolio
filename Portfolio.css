@@ -2197,7 +2197,7 @@ header .nav li a {
 }
 header .nav {
     position: fixed;
-    top:70px;
+    top:95px;
     /* left: 0; */
     right: 0px;
     bottom: 0;
@@ -2299,6 +2299,9 @@ header .nav li a:hover{
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
+}
+      .home-content h1{
+  font-size: 50px;
 }
 .hero-img {
   /* position: relative; */
