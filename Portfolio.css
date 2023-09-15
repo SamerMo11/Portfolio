@@ -1466,6 +1466,13 @@ translate: 0px 10px  ;
   width: 200;
   padding: 78px 0px;
 }
+.about h1 {
+  
+  color: var(--secondary-color);
+  font-size: 80px;
+  margin-bottom: 20px;
+  animation: slideLeft 1.5s ease forwards;
+}
 
 .about img {
   height: auto;
@@ -1485,13 +1492,13 @@ translate: 0px 10px  ;
   justify-content: space-around;
 }
 
-.about-text h1 {
+/* .about-text h1 {
   
   color: var(--secondary-color);
   font-size: 80px;
   margin-bottom: 20px;
   animation: slideLeft 1.5s ease forwards;
-}
+} */
 
 .about-text h5 {
   color: var(--third-color);
@@ -2379,7 +2386,7 @@ header .nav li a:hover{
   width: 100%;
 }
 .project {
-  width: 100%;
+  /* width: 100%; */
   height: fit-content;
   align-items: center;
   justify-content: center;
@@ -2483,7 +2490,7 @@ p {
   flex-wrap: wrap;
   display: grid;
   gap: 10px;
-  grid-template-columns: 100%;
+  grid-template-columns: 99%;
   grid-template-rows: auto auto auto auto auto auto;
   grid-template-areas:
       "txt"
