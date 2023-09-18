@@ -19,6 +19,7 @@
 
 
   --third-color: #1aeeef ;
+  /* --third-color: #1aefefab ; */
 
 
 
@@ -26,7 +27,7 @@
 
   /* --third-color:#4c9e96; */
     /* --fourth-color:#000000e3; */
-  --fourth-color:#1f212681;
+  --fourth-color:#1f2126;
   --fivth-color:#1f212681;
   
 }
@@ -77,7 +78,7 @@ body {
   /* --third-color: #0dcaf0 ; */
   /* --fourth-color:#000000d6; */
 
-  --fourth-color:#ffffffb5;
+  --fourth-color:#ffffff;
   --fivth-color:#ffffffcc;
   /* --fourth-color:green; */
   /* --fivth-color:red; */
@@ -563,7 +564,7 @@ header{
   top: 0;
   left: 0;
   width: 100%;
-  padding: 10px 100px;
+  padding: 10px 0px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -582,6 +583,8 @@ header::after{
 }
 header .logo{
   position: relative;
+  width: auto;
+  margin-left: 25px;
   color: transparent;
   transition: .5s;
   font-family: serif;
@@ -599,8 +602,10 @@ header .logo:hover{
 }
 header .nav {
   display: flex;
+  margin-right: 15px;
+  width: 100%;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   font-family: serif;
   animation: slideTop 1s ease forwards;
   background-color: var(--fourth-color);
@@ -817,6 +822,8 @@ header ul li a{
   cursor: pointer;
   position: relative;
   transition: .5s;
+  animation: slideRight 2s ease forwards;
+
 }
 .more-about:hover{
   box-shadow: 0 0 15px var(--third-color);
@@ -2150,6 +2157,9 @@ footer{
     list-style: none;
     margin:10px;
 }
+header .logo{
+  margin-left: 0px;
+}
   header .nav.active{
     display: flex;
 }
@@ -2200,6 +2210,7 @@ header .nav {
     top:95px;
     /* left: 0; */
     right: 0px;
+    margin-right: 0px;
     bottom: 0;
     background: var(--fourth-color);
     border: 2px solid var(--third-color);
@@ -2300,7 +2311,7 @@ header .nav li a:hover{
   transform: translate(-50%, -50%);
   width: 100%;
 }
-      .home-content h1{
+.home-content h1{
   font-size: 50px;
 }
 .hero-img {
@@ -2472,7 +2483,7 @@ p {
   display: flex;
   text-align: center;
   justify-content: center;
-  width: 100%;
+  width: 95%;
   padding: 40px 40px;
   background: transparent;
   border-radius: 15px;
@@ -2491,9 +2502,10 @@ p {
   width: fit-content;
   height: fit-content;
   flex-wrap: wrap;
+  justify-content: center;
   display: grid;
   gap: 10px;
-  grid-template-columns: 99%;
+  grid-template-columns: 95%;
   grid-template-rows: auto auto auto auto auto auto;
   grid-template-areas:
       "txt"
@@ -2504,6 +2516,35 @@ p {
       "fivth"
       "sixth";
 }
+.card1:hover{
+  translate: 0px 0px  ;
+  box-shadow: 0 0 15px var(--third-color);
+  }
+.card2:hover{
+  translate: 0px 0px  ;
+  box-shadow: 0 0 15px var(--third-color);
+
+  }
+.card3:hover{
+  translate: 0px 0px  ;
+  box-shadow: 0 0 15px var(--third-color);
+
+  }
+.card4:hover{
+  translate: 0px 0px  ;
+  box-shadow: 0 0 15px var(--third-color);
+
+  }
+.card5:hover{
+  translate: 0px 0px  ;
+  box-shadow: 0 0 15px var(--third-color);
+
+  }
+.card6:hover{
+  translate: 0px 0px  ;
+  box-shadow: 0 0 15px var(--third-color);
+
+  }
 .txt {
   height: 100px;
   line-height: 5px;
@@ -2535,7 +2576,7 @@ p {
   flex-direction: column;
   border: var(--third-color) solid 2px;
   border-radius: 20px;
-  background-image: linear-gradient(to bottom,transparent 50% ,var(--third-color));
+  background-image: linear-gradient(to bottom,transparent 50% , var(--third-color) );
   transition: .5s;
   height: 300px;
 }
