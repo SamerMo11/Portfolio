@@ -33,7 +33,6 @@
   --third-color: #0b8ea9 ;
   --fourth-color: #ffffff;
   --fivth-color: #ffffffcc;
-
 }
 
 
@@ -69,8 +68,8 @@ hr {
 
 #moon {
   fill: #000000;
-  height: 40px;
-  width: 40px;
+  height: 60px;
+  width: 60px;
   display: flex;
   cursor: pointer;
   background: transparent;
@@ -86,8 +85,8 @@ hr {
 }
 
 #sun {
-  height: 40px;
-  width: 40px;
+  height: 60px;
+  width: 60px;
   display: flex;
   cursor: pointer;
   background: transparent;
@@ -183,6 +182,7 @@ header .nav {
 header ul li {
   list-style: none;
   margin: 10px;
+  /* font-family: sans-serif; */
 }
 
 header ul li a {
@@ -255,6 +255,8 @@ header ul li a:hover {
   height: 450px;
   width: auto;
   border-radius: 20%;
+  animation: slideDown 1s ease forwards;
+
 }
 
 .home-content p {
@@ -315,6 +317,8 @@ header ul li a:hover {
   z-index: -3;
   transform: skewX(-20deg);
   /* transition: 2s; */
+  border-radius: 10px;
+
 }
 
 .more-about::before {
@@ -330,6 +334,8 @@ header ul li a:hover {
   z-index: -1;
   transform: skewX(-20deg);
   transition: .5s;
+  border-radius: 10px;
+
 }
 
 .more-about:hover::before {
@@ -1173,6 +1179,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   width: 100%;
 }
 
@@ -1186,10 +1193,10 @@ p {
   color: var(--third-color);
 }
 
-.contact .form .send input {
+.contact .form .send .btn-feed2 {
   padding: 10px 20px;
   margin: 15px 0;
-  outline: none;
+  /* outline: none; */
   background: transparent;
   border: 2px solid var(--third-color);
   text-decoration: none;
@@ -1201,10 +1208,75 @@ p {
   letter-spacing: 1px;
   transition: .5s;
   cursor: pointer;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+}
+.contact .form .send .btn-feed2::before{
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  background: transparent;
+  z-index: -1;
+  top: 0;
+  left: 50%;
+  transition: .5s;
+}
+.contact .form .send .btn-feed2:hover::before{
+  width: 100%;
+  left: 0;
+  background: var(--third-color);
 }
 
-.contact .form .send input:hover {
+.contact .form .send .btn-feed2:hover {
+  color: var(--primary-color);
+  box-shadow: 0 0 15px var(--third-color);
+}
+.contact .form .send #btn-feed3{
+  display: none;
+}
+
+.contact .form .send .btn-feed3 {
+  padding: 10px 20px;
+  margin: 15px 0;
+  background: transparent;
+  border: 2px solid var(--third-color);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 20px;
+  width: fit-content;
+  border-radius: 5px;
+  color: var(--secondary-color);
+  letter-spacing: 1px;
+  transition: .5s;
+  cursor: pointer;
+  position: relative;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+}
+.contact .form .send .btn-feed3::before{
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  background: transparent;
+  z-index: -1;
+  top: 0;
+  left: 50%;
+  transition: .5s;
+}
+.contact .form .send .btn-feed3:hover::before{
+  width: 100%;
+  left: 0;
   background: var(--third-color);
+}
+
+.contact .form .send .btn-feed3:hover {
   color: var(--primary-color);
   box-shadow: 0 0 15px var(--third-color);
 }
@@ -1229,7 +1301,7 @@ p {
   display: inline-block;
   padding: 15px;
   background: transparent;
-  border-radius: 40px;
+  /* border-radius: 10px; */
   font-size: 20px;
   color: var(--third-color);
   letter-spacing: 1px;
@@ -1238,13 +1310,18 @@ p {
   opacity: 0;
   animation: slideLeft 1.5s ease forwards;
   animation-delay: .1s;
-  border: solid var(--third-color) 2px;
+  /* border: solid var(--third-color) 2px; */
   margin-bottom: 30px;
+  position: relative;
 }
 
+
+
+
+
 .btn-box:hover {
-  background: var(--primary-color);
-  box-shadow: 0 0 20px var(--third-color);
+  /* background: var(--primary-color); */
+  /* box-shadow: 0 0 20px var(--third-color); */
   color: var(--third-color);
 }
 
@@ -1495,6 +1572,7 @@ footer {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   background-color: var(--third-color);
+  cursor: pointer;
 }
 
 .row .copyright {
@@ -1573,6 +1651,17 @@ footer {
 
   100% {
     transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@keyframes slideDown {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0px);
     opacity: 1;
   }
 }
