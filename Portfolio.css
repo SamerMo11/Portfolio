@@ -156,8 +156,7 @@ header .logo {
   font-family: serif;
   text-decoration: none;
   animation: slideRight 1s ease forwards;
-
-  /* font-size: 2em; */
+  letter-spacing: 2px;
   font-size: 50px;
   -webkit-text-stroke: .7px var(--third-color);
 
@@ -182,7 +181,6 @@ header .nav {
 header ul li {
   list-style: none;
   margin: 10px;
-  /* font-family: sans-serif; */
 }
 
 header ul li a {
@@ -263,7 +261,7 @@ header ul li a:hover {
   font-size: 20px;
   opacity: 0;
   animation: slideTop 1.5s ease forwards;
-  font-family: serif;
+  font-family: sans-serif;
   color: var(--secondary-color);
   line-height: 30px;
   font-weight: 600;
@@ -273,7 +271,7 @@ header ul li a:hover {
   font-size: 20px;
   opacity: 0;
   animation: slideLeft 1.5s ease forwards;
-  font-family: serif;
+  font-family: sans-serif;
   color: var(--secondary-color);
   font-weight: 600;
 
@@ -359,16 +357,12 @@ header ul li a:hover {
 
 
 #thx {
-  /* padding: 5px; */
+  
   color: var(--primary-color);
   border: var(--secondary-color) solid 3px;
-  /* width: 170px; */
-  /* height: 40px; */
   border-radius: 30px;
   background: var(--third-color);
   position: relative;
-  /* left: 40px; */
-  /* bottom: -60px; */
   display: inline-block;
   box-shadow: 0 0 10px var(--third-color);
   cursor: pointer;
@@ -440,8 +434,6 @@ header ul li a:hover {
 
   background-color: transparent;
   color: var(--third-color);
-  /* width: 200px;
-  height: 200px; */
   margin: 50px auto;
   position: relative;
   overflow: hidden;
@@ -449,13 +441,11 @@ header ul li a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-
   width: 200px;
   letter-spacing: 1px;
   font-weight: 800;
   text-decoration: none;
   transition: .5s;
-  /* opacity: 0; */
   animation: slideLeft 1.5s ease forwards;
   font-size: 20px;
   padding: 28px 30px;
@@ -470,7 +460,6 @@ header ul li a:hover {
   left: 0;
   width: 100%;
   border-radius: 50px;
-
   height: 5px;
   background-image: linear-gradient(to right, #000 50%, var(--third-color));
   animation: span1 2s linear infinite;
@@ -496,7 +485,6 @@ header ul li a:hover {
   height: 100%;
   background-image: linear-gradient(to bottom, var(--third-color), #000 50%);
   animation: span2 2s linear infinite;
-  /* animation-delay: 3s; */
 }
 
 @keyframes span2 {
@@ -540,7 +528,6 @@ header ul li a:hover {
   height: 100%;
   background-image: linear-gradient(to top, var(--third-color) 50%, #000);
   animation: span4 2s linear infinite;
-  /* animation-delay: 2s; */
 
 }
 
@@ -556,7 +543,6 @@ header ul li a:hover {
 
 .project-btn:hover {
   background: transparent;
-  /* border: solid var(--third-color) 2px; */
   color: var(--third-color);
   box-shadow: 0 0 25px var(--third-color);
 }
@@ -581,18 +567,14 @@ header ul li a:hover {
 }
 
 .project {
-  /* width: fit-content; */
   height: fit-content;
   align-items: center;
   justify-content: center;
-  /* padding: 25px 25px; */
   gap: 10px;
-  /* background-color: var(--primaary-color); */
   color: var(--third-color);
   border: var(--third-color) solid 2px;
   border-radius: 10px;
   margin: 10px;
-  /* animation-delay: .5s; */
   animation: slideTop 1s ease forwards;
   transition: 0.5s ease;
   display: grid;
@@ -605,7 +587,6 @@ header ul li a:hover {
 }
 
 .project p {
-  /* float: right; */
   width: 200px;
   letter-spacing: 1px;
   line-height: 21px;
@@ -622,8 +603,6 @@ header ul li a:hover {
   border-radius: 10px;
   position: relative;
   left: -10px;
-  /* bottom: 30px; */
-  /* margin-left: 40px; */
   transition: .5s;
 }
 
@@ -640,8 +619,6 @@ header ul li a:hover {
   border: var(--third-color) solid 1px;
   border-radius: 10px;
   position: relative;
-  /* left: 475px; */
-  /* bottom: 30px; */
   transition: .5s;
 }
 
@@ -659,13 +636,11 @@ video {
 }
 
 .project h2 {
-  /* width: fit-content; */
   height: fit-content;
   background-color: var(--third-color);
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  /* gap: 20px; */
   color: var(--primary-color);
   text-decoration: none;
   border-radius: 10px;
@@ -693,9 +668,6 @@ video {
   grid-area: vid;
 }
 
-/* h3{
-  grid-area: h3;
-} */
 
 p {
   grid-area: p;
@@ -705,7 +677,6 @@ p {
   grid-area: btns;
   display: flex;
   justify-content: flex-end;
-  /* padding-bottom: 10px; */
   padding: 10px;
 }
 
@@ -747,7 +718,6 @@ p {
 
 .servs a span {
   color: var(--secondary-color);
-  /* color:#eee; */
 }
 
 
@@ -1196,7 +1166,6 @@ p {
 .contact .form .send .btn-feed2 {
   padding: 10px 20px;
   margin: 15px 0;
-  /* outline: none; */
   background: transparent;
   border: 2px solid var(--third-color);
   text-decoration: none;
@@ -1301,7 +1270,6 @@ p {
   display: inline-block;
   padding: 15px;
   background: transparent;
-  /* border-radius: 10px; */
   font-size: 20px;
   color: var(--third-color);
   letter-spacing: 1px;
@@ -1310,7 +1278,6 @@ p {
   opacity: 0;
   animation: slideLeft 1.5s ease forwards;
   animation-delay: .1s;
-  /* border: solid var(--third-color) 2px; */
   margin-bottom: 30px;
   position: relative;
 }
@@ -1320,8 +1287,6 @@ p {
 
 
 .btn-box:hover {
-  /* background: var(--primary-color); */
-  /* box-shadow: 0 0 20px var(--third-color); */
   color: var(--third-color);
 }
 
