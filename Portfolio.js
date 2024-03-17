@@ -39,7 +39,90 @@ window.onscroll = function(){
     }
 }
 // ------------------------------------------
+window.addEventListener('scroll',reveal);
 
+function reveal(){
+  var reveals = document.querySelectorAll('.reveal');
+
+  for(var i = 0; i < reveals.length ; i++){
+
+    let windowheight = window.innerHeight;
+    let revealtop = reveals[i].getBoundingClientRect().top;
+    let revealpoint = 100;
+
+    if(revealtop < windowheight - revealpoint){
+      reveals[i].classList.add('active');
+    }
+    else{
+      reveals[i].classList.remove('active');
+    }
+  }
+}
+
+// ----------------------------------------------------------
+window.addEventListener('scroll',bottom);
+
+function bottom(){
+  var bottoms = document.querySelectorAll('.bottom');
+
+  for(var b = 0; b < bottoms.length ; b++){
+
+    let windowheight = window.innerHeight;
+    let revealtopppp = bottoms[b].getBoundingClientRect().top;
+    let revealpointttt = 100;
+
+    if(revealtopppp < windowheight - revealpointttt){
+      bottoms[b].classList.add('active');
+    }
+    else{
+      bottoms[b].classList.remove('active');
+    }
+  }
+}
+
+// ----------------------------------------------------------
+window.addEventListener('scroll',left);
+
+function left(){
+  var lefts = document.querySelectorAll('.left');
+
+  for(var l = 0; l < lefts.length ; l++){
+
+    let windowheight = window.innerHeight;
+    let revealtopp = lefts[l].getBoundingClientRect().top;
+    let revealpointt = 100;
+
+    if(revealtopp < windowheight - revealpointt){
+      lefts[l].classList.add('active');
+    }
+    else{
+      lefts[l].classList.remove('active');
+    }
+  }
+}
+
+// ----------------------------------------------------------
+
+
+window.addEventListener('scroll',right);
+
+function right(){
+  var rights = document.querySelectorAll('.right');
+  
+  for(var r = 0; r < rights.length ; r++){
+    
+    let windowheight = window.innerHeight;
+    let revealtoppp = rights[r].getBoundingClientRect().top;
+    let revealpointtt = 100;
+    
+    if(revealtoppp < windowheight - revealpointtt){
+      rights[r].classList.add('active');
+    }
+    else{
+      rights[r].classList.remove('active');
+    }
+  }
+}
 // ------------------------------------------
 
 let feed = document.getElementById('btn-feed2');
@@ -58,8 +141,7 @@ feed2.onclick = function(){
     feed2.style.display='none';
     txtarea.value='';
     emailfeed.value='';
-    namefeed.value='';
-
+    namefeed.value='';  
 }
 
 
@@ -74,9 +156,7 @@ feed.onclick = function(){
 }
 done.onclick = function(){
     done2.value='';
-
 }
 
 
 
-// ------------------------------------------
