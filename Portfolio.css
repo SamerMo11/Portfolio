@@ -1,551 +1,2314 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta thhp-rquiv="x-UA-compatile" content="IE=edge,cheome=1">
-  <meta name="viewport" content="width=device-width, initial-scsle=1.0">
-  <meta charset="UTF-8">
-  <title>Samer Mohamed</title>
-
-  <meta http-equiv="X-UA-Compatible" content="IE-edge">
-  <link rel="stylesheet" href="Portfolio.css">
-  <link rel="stylesheet" href="bootstrap.css">
-  <link rel="icon" href="port2.png">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-</head>
-<body id="body">
-  <!-- -------------------------NavBar------------------------- -->
-
-  <header>
-    <a href="#" class="logo">SAMER</a>
-    <ul class="nav">
-      <li><a href="#">HOME </a></li>
-      <li><a href="#projects">PROJECTS</a></li>
-      <li><a href="#services">SERVICES</a></li>
-      <li><a href="#about">ABOUT</a></li>
-      <li><a href="#contact-us">CONTACT</a></li>
-    </ul>
-    <div class="toggle" onclick="togglemenu();"></div>
-  </header>
-  <!-- ------------------------------------- -->
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: 400;
+  scroll-behavior: smooth;
+}
 
 
+:root {
+  --primary-color: #000;
+  --secondary-color: #edf2fc;
+  --third-color: #1aeeef;
+  --fourth-color: #1f2126;
+  --fivth-color: #1f212681;
+
+}
+
+::selection {
+  background-color: var(--third-color);
+  color: var(--primary-color);
+}
+.hide {
+  display: none;
+}
+#body {
+  background-color: #000000e3;
+  overflow-x: hidden;
+
+}
+
+.light {
+  --primary-color: #edf2fc;
+  --secondary-color: #000;
+  --third-color: #0b8ea9 ;
+  --fourth-color: #ffffff;
+  --fivth-color: #ffffffcc;
+}
 
 
-  <!-- --------------ICONS----------------------- -->
+hr {
+  outline: var(--third-color) solid 5px;
+}
 
-<img src="moon-done.png" alt="" id="moon">
+#arrow {
+  background: transparent;
+  position: fixed;
+  bottom: 5px;
+  right: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  animation: back 1s linear infinite alternate;
+  height: 40px;
+  width: 40px;
+  z-index: 1;
+  fill: var(--third-color);
+  display: none;
+}
 
-<img src="sun-done.png" alt="" id="sun">
+@keyframes back {
+  from {
+    bottom: 5px;
+  }
+
+  to {
+    bottom: 10px;
+  }
+}
+
+#moon {
+  fill: #000000;
+  height: 60px;
+  width: 60px;
+  display: flex;
+  cursor: pointer;
+  background: transparent;
+  position: fixed;
+  bottom: 5px;
+  left: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  animation: dark-light 1s linear infinite alternate;
+  z-index: 1;
+  display: none;
+
+}
+
+#sun {
+  height: 60px;
+  width: 60px;
+  display: flex;
+  cursor: pointer;
+  background: transparent;
+  position: fixed;
+  bottom: 5px;
+  left: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  fill: #ffe100;
+  animation: dark-light 1s linear infinite alternate;
+  z-index: 1;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-corner {
+  background: var(--third-color);
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--third-color);
+  border-radius: 3px;
+}
+
+.reveal {
+  position: relative;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 2s ease;
+}
+
+.reveal.active {
+  transform: translateY(0px);
+  opacity: 1;
+}
+.bottom {
+  position: relative;
+  transform: translateY(-200px);
+  opacity: 0;
+  transition: all 2s ease;
+}
+
+.bottom.active {
+  transform: translateY(0px);
+  opacity: 1;
+}
+.left {
+  position: relative;
+  transform: translateX(-200px);
+  opacity: 0;
+  transition: all 2s ease;
+}
+
+.left.active {
+  transform: translateX(0px);
+  opacity: 1;
+}
+.right {
+  position: relative;
+  transform: translateX(200px);
+  opacity: 0;
+  transition: all 2s ease;
+}
+
+.right.active {
+  transform: translateX(0px);
+  opacity: 1;
+}
 
 
-  <a href="#home">
-    <svg xmlns="http://www.w3.org/2000/svg" id="arrow" class="arrow" viewBox="0 0 16 16">
-      <path
-        d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
-    </svg>
-  </a>
-<!-- ----------------------------------------------------- -->
+
+/* -------------------------------------------------- */
+
+/* -------------------Header,Logo,Navbar---------------------------- */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--fourth-color);
+  transition: .5s;
+  z-index: 1000;
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 30px;
+  background-color: var(--third-color);
+  width: calc(100% - 60px);
+  height: 3px;
+}
+
+header .logo {
+  position: relative;
+  width: auto;
+  margin-left: 25px;
+  color: transparent;
+  transition: .5s;
+  font-family: serif;
+  text-decoration: none;
+  animation: right 2s ease forwards;
+
+  /* font-size: 2em; */
+  font-size: 50px;
+  -webkit-text-stroke: .7px var(--third-color);
+
+  font-weight: 700;
+}
+
+header .logo:hover {
+  color: var(--third-color);
+}
+
+header .nav {
+  display: flex;
+  margin-right: 15px;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end;
+  font-family: serif;
+  animation: bottom 2s ease forwards;
+  background-color: var(--fourth-color);
+}
+
+header ul li {
+  list-style: none;
+  margin: 10px;
+  /* font-family: sans-serif; */
+}
+
+header ul li a {
+  width: 100%;
+  height: 20px;
+  color: var(--third-color);
+  text-decoration: none;
+  transition: .5s;
+  text-decoration: none;
+  margin-right: 5px;
+  font-size: 25px;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+header ul li a:hover {
+  color: var(--secondary-color);
+}
+
+
+@keyframes scale {
+  0% {
+      transform: scale(.1);
+      opacity: 0;
+  }
+
+  100% {
+      transform: scale(1);
+      opacity: 1;
+  }
+}
 
 
 
-  <!-- -------------------------Home------------------------- -->
+
+
+
+/* -------------------------------------------------- */
+
+
+/* -------------------Home---------------------------- */
+
+
+
+
+.home {
+  background-color: var(--fivth-color);
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: 100vh;
+  align-items: center;
+}
+
+.home .home-content .h1 h1 span {
+  color: var(--third-color);
+}
+
+.home-content {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.hero-img {
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  padding-top: 20px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: left 2s ease forwards;
+
+
+}
+.hero-img .img{
+  position: relative;
+  width: 50%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 1s;
+}
+.hero-img .img span:nth-child(1){
+  position: absolute;
+  top: 0%;
+  left: 0px;
+  clip-path: polygon(100% 0, 50% 50%, 100% 100%);
+  background: var(--third-color);
+  width: 40px;
+  height: 40px;
+  transform: translateY(-50%) rotate(225deg);
+
+}
+.hero-img .img span:nth-child(2){
+  position: absolute;
+  clip-path: polygon(100% 0, 50% 50%, 100% 100%);
+  width: 40px;
+  height: 40px;
+  background: var(--third-color);
+  top: 0%;
+  right: 0px;
+  transform: translateY(-50%) rotate(315deg);
+}
+.hero-img .img span:nth-child(3){
+  position: absolute;
+  clip-path: polygon(100% 0, 50% 50%, 100% 100%);
+  width: 40px;
+  height: 40px;
+  background: var(--third-color);
+  bottom: -15%;
+  right: 0px;
+  transform: translateY(-50%) rotate(45deg);
+}
+.hero-img .img span:nth-child(4){
+  position: absolute;
+  clip-path: polygon(100% 0, 50% 50%, 100% 100%);
+  width: 40px;
+  height: 40px;
+  background: var(--third-color);
+  bottom: -15%;
+  left: 0px;
+  transform: translateY(-50%) rotate(135deg);
+}
+.hero-img .img span{
+  transition: 2s;
+  animation-name: arrows;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  /* animation-fill-mode: forwards; */
+}
+
+@keyframes arrows{
+  0%{
+    width: 0px;
+    height: 0px;
+  }
+  25%{
+    width: 20px;
+    height: 20px;
+  }
+  50%{
+    width: 40px;
+    height: 40px;
+  }
+  75%{
+    width: 20px;
+    height: 20px;
+  }
+  100%{
+    width: 0px;
+    height: 0px;
+  }
+}
+
+.hero-img .img img {
+  width: 75%;
+  border-radius: 20px;
+
+}
+
+.home-content p {
+  font-size: 20px;
+  opacity: 0;
+  animation: right 2s ease forwards;
+  font-family: serif;
+  color: var(--secondary-color);
+  line-height: 30px;
+  font-weight: 600;
+}
+
+.home-content h2 {
+  font-size: 20px;
+  animation: right 2s ease forwards;
+  font-family: serif;
+  color: var(--secondary-color);
+  font-weight: 600;
+
+}
+
+.home-content .para  {
+  animation: right 2s ease forwards;
+}
+.home-content .para > p{
+  color: var(--third-color);
+  font-size: 40px;
+
+}
+
+.more-about {
+  display: inline-block;
+  color: var(--secondary-color);
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  z-index: 2;
+  cursor: pointer;
+  position: relative;
+  transition: .5s;
+  animation: right 2s ease forwards;
+
+}
+
+.more-about::after {
+  content: "";
+  border-left: 2px solid var(--third-color);
+  border-right: 2px solid var(--third-color);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -3;
+  transform: skewX(-20deg);
+  /* transition: 2s; */
+  border-radius: 10px;
+
+}
+
+.more-about::before {
+  content: "";
+  background: var(--third-color);
+  border-bottom: 2px solid var(--third-color);
+  border-top: 2px solid var(--third-color);
+  width: 0%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: -1;
+  transform: skewX(-20deg);
+  transition: .5s;
+  border-radius: 10px;
+
+}
+
+.more-about:hover::before {
+  background: transparent;
+  width: 100%;
+  left: 0%;
+  box-shadow: 0 0 25px var(--third-color);
+
+}
+
+.more-about a {
+  text-decoration: none;
+  color: var(--secondary-color);
+  transition: .5s;
+}
+
+.more-about:hover a {
+  color: var(--secondary-color);
+}
+
+
+
+#thx {
+  /* padding: 5px; */
+  color: var(--primary-color);
+  border: var(--secondary-color) solid 3px;
+  /* width: 170px; */
+  /* height: 40px; */
+  border-radius: 30px;
+  background: var(--third-color);
+  position: relative;
+  /* left: 40px; */
+  /* bottom: -60px; */
+  display: inline-block;
+  box-shadow: 0 0 10px var(--third-color);
+  cursor: pointer;
+  padding: 10px;
+  display: none;
+
+}
+
+/* -------------------------------------------------- */
+
+/* -------------------Projects---------------------------- */
+
+
+
+
+
+/* .content {
+  width: 90%;
+  height: fit-content;
+  display: grid;
+  grid-auto-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+    "pro1 pro2 "
+    "pro3 pro4"
+    "pro5 pro6"
+    "pro7 pro8";
+
+}
+
+.pro1 {
+  grid-area: pro2;
+}
+
+.pro2 {
+  grid-area: pro1;
+}
+
+.pro3 {
+  grid-area: pro3;
+}
+
+.pro4 {
+  grid-area: pro7;
+}
+
+.pro5 {
+  grid-area: pro5;
+}
+
+.pro6 {
+  grid-area: pro6;
+}
+
+.pro7 {
+  grid-area: pro4;
+}
+
+.pro8 {
+  grid-area: pro8;
+}
+
+.animation-btn {
+  width: 100%;
+} */
+
+.projects {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 100px;
+}
+
+.project-btn {
+
+
+  background-color: transparent;
+  color: var(--third-color);
+  /* width: 200px;
+  height: 200px; */
+  margin: 50px auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 200px;
+  letter-spacing: 1px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: .5s;
+  /* opacity: 0; */
+  animation: slideLeft 1.5s ease forwards;
+  font-size: 20px;
+  padding: 28px 30px;
+  box-shadow: 0 0 25px var(--primary-color);
+
+
+}
+
+.project-btn span:nth-child(1) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-radius: 50px;
+
+  height: 5px;
+  background-image: linear-gradient(to right, #000 50%, var(--third-color));
+  animation: span1 2s linear infinite;
+}
+
+@keyframes span1 {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.project-btn span:nth-child(2) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 5px;
+  border-radius: 50px;
+
+  height: 100%;
+  background-image: linear-gradient(to bottom, var(--third-color), #000 50%);
+  animation: span2 2s linear infinite;
+  /* animation-delay: 3s; */
+}
+
+@keyframes span2 {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.project-btn span:nth-child(3) {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  border-radius: 50px;
+
+  height: 5px;
+  background-image: linear-gradient(to left, #000 50%, var(--third-color));
+  animation: span3 2s linear infinite;
+}
+
+@keyframes span3 {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.project-btn span:nth-child(4) {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 5px;
+  border-radius: 50px;
+  height: 100%;
+  background-image: linear-gradient(to top, var(--third-color) 50%, #000);
+  animation: span4 2s linear infinite;
+  /* animation-delay: 2s; */
+
+}
+
+@keyframes span4 {
+  0% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+.project-btn:hover {
+  background: transparent;
+  color: var(--third-color);
+  box-shadow: 0 0 25px var(--third-color);
+}
+
+.all{
+  width: 90%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.all .box{
+  width: 45%;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  border: 2px solid var(--third-color);
+  border-radius: 10px;
+  padding-block: 20px;
+}
+.all .box > p{
+  color: var(--fourth-color);
+  background: var(--third-color);
+  text-transform: capitalize;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.all .box .content{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+.all .box .content .pro{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.all .box .content .pro .img{
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid var(--third-color);
+  border-radius: 5px;
+}
+.all .box .content .pro img{
+  width: 100%;
+  transition: 1s;
+}
+.all .box:hover .content .pro img{
+  transform: scale(1.2);
+  filter: grayscale(1);
+}
+.all .box .content .pro img:hover{
+  filter: grayscale(0);
+  transform: scale(1);
+
+}
+.all .box .content .pro > p{
+  text-transform: uppercase;
+  color: var(--third-color);
+  font-weight: 800;
+}
+.all .box .content .text{
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-transform: capitalize;
+}
+.all .box .content .text > p{
+  color: var(--secondary-color);
+  padding-inline: 5px;
+}
+.all .box .content .text > p span{
+  color: var(--third-color);
+}
+.all .box .content .text .links{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+
+}
+.all .box .content .text .links > a{
+  position: relative;
+  text-decoration: none;
+  text-transform: capitalize;
+  padding: 5px 20px;
+  font-size: 15px;
+  font-weight: 700;
+  transition: 1s;
+
+}
+.all .box .content .text .links > a::before,
+.all .box .content .text .links > a::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: skew(-20deg);
+  z-index: -1;
+  transition: 0.5s;
+}
+.all .box .content .text .links > a::before{
+  width: 100%;
+  height: 100%;
+}
+.all .box .content .text .links > a::after{
+  width: 0%;
+  height: 100%;
+}
+.all .box .content .text .links > a:nth-child(1){
+  color: var(--fourth-color);
+  transition: 1s;
+}
+.all .box .content .text .links > a:nth-child(1)::before{
+  background: var(--third-color);
+}
+.all .box .content .text .links > a:nth-child(1):hover::after{
+  width: 100%;
+  height: 100%;
+  background: var(--secondary-color);
+}
+.all .box .content .text .links > a:nth-child(2){
+  color: var(--fourth-color);
+}
+.all .box .content .text .links > a:nth-child(2)::before{
+  background: var(--secondary-color);
+}
+.all .box .content .text .links > a:nth-child(2):hover::after{
+  width: 100%;
+  background: var(--third-color);
+}
+
+
+
+
+
+/* -------------------------------------------------- */
+
+/* -------------------SERVICES---------------------------- */
+.servs {
+  background-color: var(--fivth-color);
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 30px;
+    padding-top: 50px;
+}
+.servs .header{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5%;
+  position: relative;
+}
+
+.servs .serv-btn {
+
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  width: 40%;
+  height: auto;
+  padding: 40px;
+  background: transparent;
+  color: var(--third-color);
+  letter-spacing: 1px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.servs .header .serv-btn::before{
+  content: 'SERVICES';
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  color: transparent;
+  -webkit-text-stroke: 0.7px var(--secondary-color);
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  font-size: 100px;
+  font-weight: 900;
+  letter-spacing: 20px;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+/* .servs .serv-btn:hover {
+  border: solid var(--secondary-color) 2px;
+  color: var(--third-color);
+  box-shadow: 0 0 25px var(--secondary-color);
+} */
+
+
+.servs a span {
+  color: var(--secondary-color);
+  /* color:#eee; */
+}
+
+
+.servs h3 {
+  color: var(--third-color);
+  text-transform: uppercase;
+}
+.txt {
+  height: 100px;
+  line-height: 5px;
+  background-color: transparent;
+  position: relative;
+  margin-right: 40px;
+}
+
+.txt-h1 {
+  color: var(--secondary-color);
+  margin-right: 48px;
+}
+
+.txt-p {
+  color: var(--third-color);
+
+}
+
+.txt-h1::before {
+  content: "";
+  position: absolute;
+  left: 1%;
+  bottom: 25%;
+  width: 210px;
+  height: -1px;
+  outline: var(--third-color) solid 1px;
+}
+.cards {
+  background-color: transparent;
+  width: fit-content;
+  height: fit-content;
+  flex-wrap: wrap;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 300px 300px 300px;
+  grid-template-rows: auto auto auto;
+  grid-template-areas:
+    " txt txt txt "
+    " first second third "
+    "fourth fivth sixth";
+  
+}
+
+.cards .h1-card {
+  color: var(--third-color);
+}
+
+.card1:hover {
+  translate: -10px 0px;
+}
+
+.card2:hover {
+  translate: 0px -10px;
+}
+
+.card3:hover {
+  translate: 10px 0px;
+}
+
+.card4:hover {
+  translate: -10px 0px;
+}
+
+.card5:hover {
+  translate: 0px 10px;
+}
+
+.card6:hover {
+  translate: 10px 0px;
+}
+
+
+.card1 {
+  grid-area: first;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  border: var(--third-color) solid 2px;
+  border-radius: 20px;
+  transition: .5s;
+  height: 300px;
+
+}
+
+.card2 {
+  grid-area: second;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  border: var(--third-color) solid 2px;
+  border-radius: 20px;
+  background-image: linear-gradient(to bottom, transparent 50%, var(--third-color));
+  transition: .5s;
+  height: 300px;
+
+
+}
+
+.card3 {
+  grid-area: third;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  border: var(--third-color) solid 2px;
+  border-radius: 20px;
+  transition: .5s;
+  height: 300px;
+
+
+}
+
+.card4 {
+  grid-area: fourth;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  border: var(--third-color) solid 2px;
+  border-radius: 20px;
+  background-image: linear-gradient(to bottom, transparent 50%, var(--third-color));
+  transition: .5s;
+  height: 300px;
+
+}
+
+.card5 {
+  grid-area: fivth;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  border: var(--third-color) solid 2px;
+  border-radius: 20px;
+  transition: .5s;
+  height: 300px;
+
+}
+
+.card6 {
+  grid-area: sixth;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* flex-wrap: wrap; */
+  flex-direction: column;
+  border: var(--third-color) solid 2px;
+  border-radius: 20px;
+  background-image: linear-gradient(to bottom, transparent 50%, var(--third-color));
+  transition: .5s;
+  height: 300px;
+}
+
+.h1-card {
+  color: #eee;
+  text-transform: capitalize;
+  font-size: 30px;
+}
+
+.p-card {
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--secondary-color);
+}
+
+.kb {
+  width: 25%;
+  display: block;
+  fill: var(--third-color);
+  margin-top: 25px;
+}
+
+.web {
+  fill: var(--third-color);
+  width: calc(100%/4);
+  margin-top: 25px;
+}
+
+.phone {
+  width: calc(100%/4);
+  fill: var(--third-color);
+  margin-top: 25px;
+  height: 60px;
+
+}
+
+.tab {
+  width: calc(100%/4);
+  fill: var(--third-color);
+  margin-top: 25px;
+  margin-left: -10px;
+  margin-right: 10px;
+
+}
+
+.lap {
+  width: calc(100%/4);
+  fill: var(--third-color);
+  margin-top: 25px;
+}
+
+.cr {
+  height: 80px;
+  margin-top: 20px;
+  fill: var(--third-color);
+}
+
+.flag {
+  height: 80px;
+  margin-top: 20px;
+  fill: var(--third-color);
+}
+
+/* -------------------------------------------------- */
+
+
+/* -------------------About---------------------------- */
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.about h1 {
+
+  color: var(--secondary-color);
+  font-size: 80px;
+  margin-bottom: 20px;
+}
+
+.about .about-image {
+  width: 20%;
+  height: auto;
+  position: relative;
+}
+.about .about-image::before{
+  content: '';
+  position: absolute;
+  left: 10%;
+  top: 5%;
+  width: 100%;
+  height: 100%;
+  border: 5px solid var(--third-color);
+  z-index: -1;
+  transition: 0.5s;
+}
+.about .about-image:hover img{
+  filter: grayscale(1);
+}
+.about .about-image img{
+  width: 100%;
+  height: 100%;
+  transition: 0.5s;
+}
+
+.about-text {
+    display: flex;
+    width: 30%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10%;
+}
+
+
+.about-text h5 {
+  color: var(--third-color);
+  font-size: 25px;
+  text-transform: capitalize;
+  /* margin-bottom: 25px; */
+  letter-spacing: 2px;
+}
+
+.about-text p {
+  color: var(--secondary-color);
+  letter-spacing: 1px;
+  line-height: 28px;
+  font-size: 18px;
+  margin-bottom: 45px;
+  font-weight: 600;
+  width: 450px;
+}
+
+.about-text p span {
+
+  font-weight: 600;
+}
+
+.btn-box00 {
+  position: relative;
+  width: fit-content;
+  padding: 20px 20px;
+}
+
+.btn-box0::after {
+  content: "";
+  border-top: 2px solid var(--third-color);
+  border-bottom: 2px solid var(--third-color);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  border-radius: 10px;
+  transition: .5s;
+}
+
+.btn-box0::before {
+  content: "";
+  background: var(--third-color);
+  width: 0%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: -3;
+  border-radius: 10px;
+  transition: .5s;
+}
+
+.btn-box0:hover::before {
+  border-left: 2px solid var(--third-color);
+  border-right: 2px solid var(--third-color);
+  background: transparent;
+  color: var(--third-color);
+  width: 100%;
+  left: 0%;
+  box-shadow: 0 0 25px var(--third-color);
+
+}
+
+.btn-box0 {
+  font-size: 20px;
+  color: var(--third-color);
+  letter-spacing: 1px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: .5s;
+  opacity: 0;
+  padding: 20px;
+
+}
+
+.btn-box0:hover {
+  color: var(--third-color);
+}
+
+
+/* --------------------CONTACT------------------------------ */
+.contact {
+  padding: 20px 100px;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--fivth-color);
+}
+
+.contact .form {
+  width: 50%;
+  margin: 30px;
+}
+
+.contact .form h1 {
+  color: var(--third-color);
+}
+
+.contact .form .inputBx {
+  margin: 10px 0;
+}
+
+.contact .form .inputBx p {
+  color: var(--secondary-color);
+  margin-bottom: 5px;
+}
+
+.contact .form .inputBx input,
+.contact .form .inputBx textarea {
+  border: 1px solid var(--secondary-color);
+  border-radius: 5px;
+  outline: none;
+  padding: 10px;
+  width: 100%;
+  color: var(--secondary-color);
+  background: var(--fourth-color);
+  min-height: 15px;
+  font-size: 1.1em;
+}
+
+.contact .form .inputBx textarea {
+  height: 150px;
+}
+
+.contact .form .send {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.contact .form .send p {
+  color: var(--secondary-color);
+  width: fit-content;
+  font-size: 20px;
+}
+
+.contact .form .send p span {
+  color: var(--third-color);
+}
+
+.contact .form .send .btn-feed2 {
+  padding: 10px 20px;
+  margin: 15px 0;
+  /* outline: none; */
+  background: transparent;
+  border: 2px solid var(--third-color);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 20px;
+  width: 150px;
+  border-radius: 5px;
+  color: var(--secondary-color);
+  letter-spacing: 1px;
+  transition: .5s;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+}
+.contact .form .send .btn-feed2::before{
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  background: transparent;
+  z-index: -1;
+  top: 0;
+  left: 50%;
+  transition: .5s;
+}
+.contact .form .send .btn-feed2:hover::before{
+  width: 100%;
+  left: 0;
+  background: var(--third-color);
+}
+
+.contact .form .send .btn-feed2:hover {
+  color: var(--primary-color);
+  box-shadow: 0 0 15px var(--third-color);
+}
+.contact .form .send #btn-feed3{
+  display: none;
+}
+
+.contact .form .send .btn-feed3 {
+  padding: 10px 20px;
+  margin: 15px 0;
+  background: transparent;
+  border: 2px solid var(--third-color);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 20px;
+  width: fit-content;
+  border-radius: 5px;
+  color: var(--secondary-color);
+  letter-spacing: 1px;
+  transition: .5s;
+  cursor: pointer;
+  position: relative;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+}
+.contact .form .send .btn-feed3::before{
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  background: transparent;
+  z-index: -1;
+  top: 0;
+  left: 50%;
+  transition: .5s;
+}
+.contact .form .send .btn-feed3:hover::before{
+  width: 100%;
+  left: 0;
+  background: var(--third-color);
+}
+
+.contact .form .send .btn-feed3:hover {
+  color: var(--primary-color);
+  box-shadow: 0 0 15px var(--third-color);
+}
+
+/* -------------------Contact---------------------------- */
+
+
+.contact1 {
+
+  border: var(--third-color) double 5px;
+  width: 350px;
+  padding-top: 5px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+}
+
+.btn-box {
+  display: inline-block;
+  padding: 15px;
+  background: transparent;
+  /* border-radius: 10px; */
+  font-size: 20px;
+  color: var(--third-color);
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: .5s;
+  animation: slideLeft 1.5s ease forwards;
+  animation-delay: .1s;
+  /* border: solid var(--third-color) 2px; */
+  margin-bottom: 30px;
+  position: relative;
+}
+
+
+
+
+
+.btn-box:hover {
+  /* background: var(--primary-color); */
+  /* box-shadow: 0 0 20px var(--third-color); */
+  color: var(--third-color);
+}
+
+.image {
+  width: 200px;
+  transition: .5s;
+  animation-delay: .1s;
+  border-radius: 10%;
+  transition-duration: 1.5s;
+  animation: slideRight 1s ease forwards;
+  border: 2px solid var(--third-color);
+
+}
+
+.image:hover {
+  box-shadow: 0 0 30px var(--third-color);
+  transition-duration: .3s;
+}
+
+
+.wd {
+  color: var(--third-color);
+  width: fit-content;
+  font-size: 25px;
+  margin-top: 20px;
+  transition-duration: 1s;
+  background: transparent;
+}
+
+.card0 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background-color: transparent;
+  width: auto;
+}
+
+/* for all social containers*/
+
+.socialContainer {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background-color: #2c2c2c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition-duration: 1.5s;
+}
+
+/* GitHub*/
+.containerOne:hover {
+  background-color: rgb(0, 0, 0);
+  transition-duration: .3s;
+  fill: #000000;
+}
+
+/* LinkdIn*/
+.containerThree:hover {
+  background-color: #0072b1;
+  transition-duration: .3s;
+  fill: rgb(255, 255, 255);
+}
+
+/* FaceBook*/
+.containerTwo:hover {
+  background-color: #00acee;
+  transition-duration: .3s;
+  fill: rgb(255, 255, 255);
+}
+
+/* WhatsApp*/
+.containerFour:hover {
+  background-color: #128C7E;
+  transition-duration: .3s;
+  fill: rgb(255, 255, 255);
+}
+
+.socialSvg {
+  width: 17px;
+}
+
+.socialSvg path {
+  fill: rgb(255, 255, 255);
+}
+
+.socialContainer:hover .socialSvg {
+  animation: slide-in-top 0.5s both;
+}
+
+/* -------------------------------------------------- */
+
+
+
+/* -------------------Footer---------------------------- */
+footer {
+  background-color: #000000ff;
+  position: relative;
+  width: 100%;
+  height: fit-content;
+  padding: 3rem 1rem;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.col {
+  min-width: 250px;
+  color: #f2f2f2f2;
+  font-family: poppins;
+  padding: 0 2rem;
+}
+
+.col .logo {
+  width: 200px;
+  margin-bottom: 25px;
+}
+
+.col h3 {
+  color: var(--third-color);
+  margin-bottom: 20px;
+  position: relative;
+  cursor: pointer;
+  width: fit-content;
+  overflow: hidden;
+}
+
+.col h3::after {
+  content: '';
+  height: 3px;
+  width: 0px;
+  background-color: var(--third-color);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: 0.3s ease;
+
+}
+
+.col h3:hover::after {
+  width: 100%;
+}
+
+.col .social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+
+}
+
+.col .social a i {
+  color: var(--third-color);
+  margin-top: 20px;
+  transition: 0.3s ease;
+  transform: scale(1.5);
+
+}
+
+.col .social a i:hover {
+  transform: scale(1.5);
+  filter: grayscale(25);
+}
+
+.col .links a {
+  display: block;
+  text-decoration: none;
+  color: #f2f2f2;
+  margin-bottom: 5px;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+.col .links a::before {
+  content: '';
+  height: 16px;
+  width: 3px;
+  position: absolute;
+  top: 5px;
+  left: -10px;
+  background-color: var(--third-color);
+  transition: 0.5s ease;
+  opacity: 0;
+}
+
+.col .links a:hover::before {
+  opacity: 1;
+}
+
+.col .links a:hover {
+  transform: translateX(-8px);
+  color: var(--third-color);
+}
+
+.col .contact-details {
+  display: inline-flex;
+  justify-content: space-between;
+}
+
+.col .contact-details i {
+  margin-right: 15px;
+}
+
+.fa-paper-plane:before {
+  content: "\f1d8";
+  color: #000;
+}
+
+.row .form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.row .form input {
+  background-color: var(--fivth-color);
+  color: #fff;
+  border: 0;
+  outline: none;
+  padding: 14px 20px;
+  border-radius: 6px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+
+}
+
+.form a {
+  padding: 15.5px 20px;
+  border: 0;
+  border-radius: 6px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  background-color: var(--third-color);
+  cursor: pointer;
+}
+
+.row .copyright {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.row .copyright span {
+  color: var(--third-color);
+}
+
+
+
+
+
+/* -------------------------------------------------- */
+
+
+/* -------------------KeyFrames---------------------------- */
+
+@keyframes top {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes left {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes right {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes bottom {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@keyframes slideDown {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+
+/* ------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+----------RESPONSIVE--------------------------------------------------------------------
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------ */
+@media (max-width:767px) {
+  header {
+    padding: 10px 10px;
+  }
+
+  header ul li {
+    list-style: none;
+    margin: 10px;
+  }
+
+  header .logo {
+    margin-left: 0px;
+  }
+
+  header .nav.active {
+    display: flex;
+  }
+
+  header .nav li {
+    margin: 20px 0;
+  }
+
+  header .nav li a {
+    margin: 10px 0;
+    font-size: 24px;
+    transition: .3s;
+    position: relative;
+  }
+
+  header ul li a::after {
+    content: '';
+    height: 3px;
+    width: 0px;
+    background-color: var(--third-color);
+    position: absolute;
+    bottom: 15px;
+    left: 0px;
+    transition: .3s ease;
+
+  }
+
+  header ul li a:hover::after {
+    width: 100%;
+  }
+
+  .toggle {
+    position: relative;
+    width: 50px;
+    height: 30px;
+    background: url(open.png);
+    filter: drop-shadow(0px 0px 10px var(--third-color));
+    background-position: center;
+    background-size: 30px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    z-index: 10001;
+  }
+
+  .toggle.active {
+    background: url(close.png);
+    background-position: center;
+    background-size: 30px;
+    background-repeat: no-repeat;
+  }
+
+  header .nav {
+    position: fixed;
+    top: 95px;
+    right: 0px;
+    margin-right: 0px;
+    bottom: 0;
+    background: var(--fourth-color);
+    border: 2px solid var(--third-color);
+    width: 200px;
+    height: fit-content;
+    border-radius: 20px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 100;
+  }
+
+  header .nav li a:hover {
+    padding: 20px;
+    border-radius: 20px;
+
+  }
+
+  .home {
+    display: flex;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: auto;
+    background-size: cover;
+    background-position: center;
+    align-items: center;
+    flex-direction: column-reverse;
+    margin-top: 15vh;
+
+  }
+
+  .home-content {
+    padding: 0px 10%;
+    padding-top: 70px;
+    position: relative;
+    width: 100%;
+  }
+
+  .home-content .para {
+    height: 100px;
+}
+.home-content .para span {
+  line-height: 40px;
+}
+
+  .hero-img {
+    width: 100%;
+  }
+
+  .hero-img{
+    overflow: visible;
+  }
+  .hero-img .img {
+    position: relative;
+    width: 50%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+}
+.hero-img .img img {
+  width: 100%;
+  border-radius: 20%;
+}
+
+.all .box {
+  width: 100%;
+  height: auto;
+}
+.all .box .content{
+  flex-direction: column;
+}
+.all .box .content .pro {
+  width: 90%;
+}
+.all .box .content .text {
+  width: 90%;
+}
+
+
   
 
-  <section id="home" class="home">
+  .servs {
+    background-color: var(--fivth-color);
+    width: 100%;
+  }
 
-    <div id="home-content" class="home-content">
-      <h2 id="light">Hello, I’m</h2>
-      <div class="para">
-        <p><span class="auto-type"></span></p>
-      </div>
-      <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-      <script>
-        var typed = new Typed(".auto-type", {
-          strings: ['Samer Mohamed', 'Front-End Developer'],
-          typeSpeed: 120,
-          backSpeed: 50,
-          loop: true,
-        })
-      </script>
-      <p> I’am a Freelancer Front-End developer <br>and This is my personal portfolio i hope you like it!</p>
-      <br>
-      <div class="more-about"><a href="#about">More About Me</a></div>
-    </div>
-    <div class="hero-img">
-      <div class="img">
-        <span></span><span></span><span></span><span></span>
-      <img src="samer0.png">
-      </div>
-    </div>
-  </section>
+  .servs .serv-btn {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    width: 95%;
+    padding: 40px 40px;
+    border-radius: 15px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    animation-delay: .1s;
+    cursor: pointer;
+    transition: 1s;
+  }
+  .servs .header .serv-btn::before{
+    top: 30%;
+    font-size: 50px;
+    letter-spacing: 10px;
+  }
+  .cards {
+    background-color: transparent;
+    width: fit-content;
+    height: fit-content;
+    flex-wrap: wrap;
+    justify-content: center;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 95%;
+    grid-template-rows: auto auto auto auto auto auto;
+    grid-template-areas:
+      "txt"
+      "first"
+      "second"
+      "third"
+      "fourth"
+      "fivth"
+      "sixth";
+  }
 
-  <hr id="projects"> 
-  <!-- ----------------------------------------------------------------------------- -->
+  .card1:hover {
+    translate: 0px 0px;
+    box-shadow: 0 0 15px var(--third-color);
+  }
 
-  <!-- -------------------------Projects----------------------- -->
+  .card2:hover {
+    translate: 0px 0px;
+    box-shadow: 0 0 15px var(--third-color);
 
-  <div class="projects" >
-      <div class="animation-btn reveal"><a href="#projects" class="project-btn"> PROJECTS
-          <span></span><span></span><span></span><span></span></a></div>
-<!-- ------------------------- -->
-      <div class="all">
-        <div class="box left">
-          <p>one piece world</p>
+  }
 
-          <div class="content">
-          <div class="pro">
-            <div class="img">
-              <img src="op.png" alt="">
-            </div>
-            <p>html __ css __ js</p>
-          </div> 
-          <div class="text">
-            <p>my official one piece website which you can discover many informations and  a new world through animes . OP fans will like it. try demo live and enjoy ! <br> ( <span>responsive</span> )</p>
-            <div class="links">
-              <a target="_blank" href="https://www.linkedin.com/posts/samer-mohamed-5b2586280_html5-htmlcssjavascript-css3-activity-7171480585045950465-zu1d?utm_source=share&utm_medium=member_desktop">video</a>
-              <a target="_blank" href="https://samermo11.github.io/one-piece/">demo live</a>
-            </div>
-          </div>
-          </div>
-        </div>
-<!-- ------------------------- -->
+  .card3:hover {
+    translate: 0px 0px;
+    box-shadow: 0 0 15px var(--third-color);
 
-<div class="box right">
-  <p>marvel universe</p>
+  }
 
-  <div class="content">
-  <div class="pro">
-    <div class="img">
-      <img src="Marvel.png" alt="">
-    </div>
-    <p>html __ css __ js __ bootstrap</p>
-  </div>
-  <div class="text">
-    <p>my official marvel website whis has all you need to know about marvel like movies ,comics,and all informations you need to know about marvel universe <br> ( <span>responsive</span> ) </p>
-    <div class="links">
-      <a target="_blank" href="">video</a>
-      <a target="_blank" href="https://samermo11.github.io/Marvel-Universe/">demo live</a>
-    </div>
-  </div>
-  </div>
-</div>
-<!-- ------------------------- -->
+  .card4:hover {
+    translate: 0px 0px;
+    box-shadow: 0 0 15px var(--third-color);
 
-<div class="box left">
-  <p>airline system</p>
+  }
 
-  <div class="content">
-  <div class="pro">
-    <div class="img">
-      <img src="airline.png" alt="">
-    </div>
-    <p>html __ css __ js __ php</p>
-  </div>
-  <div class="text">
-    <p>this is my first team project <br> project team ( reem tawfik ,<br> ahmed medhat , <br> ibrahim sarhan , <br> moamen mohamed ) <br> ( <span>responsive</span> )</p>
-    <div class="links">
-      <a target="_blank" href="https://www.linkedin.com/posts/samer-mohamed-5b2586280_webdevelopment-html-css-activity-7143632404757336066-l3KK?utm_source=share&utm_medium=member_desktop">video</a>
-      <a target="_blank" href="https://samermo11.github.io/Airline--system/">demo live</a>
-    </div>
-  </div>
-  </div>
-</div>
-<!-- ------------------------- -->
+  .card5:hover {
+    translate: 0px 0px;
+    box-shadow: 0 0 15px var(--third-color);
 
-<div class="box right">
-  <p>spider verse</p>
+  }
 
-  <div class="content">
-  <div class="pro">
-    <div class="img">
-      <img src="spider-verse.png" alt="">
-    </div>
-    <p>html __ css __ js</p>
-  </div>
-  <div class="text">
-    <p>my official website for spider man as named spider-verse it has alot of informations <br> about the spiders <br> with new design ideas <br>( <span>responsive</span> ) </p>
-    <div class="links">
-      <a target="_blank" href="https://www.linkedin.com/posts/samer-mohamed-5b2586280_html5-html5-css-activity-7151624825881407489-rUyG?utm_source=share&utm_medium=member_desktop">video</a>
-      <a target="_blank" href="https://samermo11.github.io/Spider-Verse/">demo live</a>
-    </div>
-  </div>
-  </div>
-</div>
-<!-- ------------------------- -->
+  .card6:hover {
+    translate: 0px 0px;
+    box-shadow: 0 0 15px var(--third-color);
 
-<div class="box left">
-  <p>bat-man</p>
+  }
 
-  <div class="content">
-  <div class="pro">
-    <div class="img">
-      <img src="batman.png" alt="">
-    </div>
-    <p>html __ css __ js</p>
-  </div>
-  <div class="text">
-    <p>gotham needs you batty <br>my official bat-man website with simple and different design. <br> try demo live and enjoy! <br>( <span>responsive</span> )</p>
-    <div class="links">
-      <a target="_blank" href="https://www.linkedin.com/posts/samer-mohamed-5b2586280_webdevelopment-frontend-html-activity-7144307855276371969-NLw-?utm_source=share&utm_medium=member_desktop">video</a>
-      <a target="_blank" href="https://samermo11.github.io/Bat-Man/">demo live</a>
-    </div>
-  </div>
-  </div>
-</div>
-<!-- ------------------------- -->
+  .txt {
+    height: 100px;
+    line-height: 5px;
+    position: relative;
+    margin-right: 40px;
+  }
 
-<div class="box right">
-  <p>gaming store</p>
+  .card1 {
+    grid-area: first;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    border-radius: 20px;
+    transition: .5s;
+    height: 300px;
+  }
 
-  <div class="content">
-  <div class="pro">
-    <div class="img">
-      <img src="gaming-store.png" alt="">
-    </div>
-    <p>html __ css __ js</p>
-  </div>
-  <div class="text">
-<p>my simple gaming store and first website using java script , you will find a great package of mobile and pc games just click the link and download it! <br> ( <span>responsive</span> ) </p>
-    <div class="links">
-      <a target="_blank" href="https://www.linkedin.com/posts/samer-mohamed-5b2586280_new-project-responsive-gaming-website-for-activity-7114199072869134336-VZLn?utm_source=share&utm_medium=member_desktop">video</a>
-      <a target="_blank" href="https://samermo11.github.io/gaming-store/">demo live</a>
-    </div>
-  </div>
-  </div>
-</div>
-<!-- ------------------------- -->
+  .card2 {
+    grid-area: second;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    border-radius: 20px;
+    transition: .5s;
+    height: 300px;
+  }
 
-<div class="box left">
-  <p>anime home</p>
+  .card3 {
+    grid-area: third;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    border-radius: 20px;
+    transition: .5s;
+    height: 300px;
+  }
 
-  <div class="content">
-  <div class="pro">
-    <div class="img">
-      <img src="Anime.png" alt="">
-    </div>
-    <p>html __ css</p>
-  </div>
-  <div class="text">
-    <p>my first ever website using only html and little knowledge of css ( margin-border-hover-borderRadius-not responnsive ) i hope you like it </p>
-    <div class="links">
-      <a target="_blank" href="https://www.linkedin.com/posts/samer-mohamed-5b2586280_css-html-activity-7082090745171505152-dang?utm_source=share&utm_medium=member_desktop">video</a>
-      <a target="_blank" href="https://samermo11.github.io/Anime_Project/">demo live</a>
-    </div>
-  </div>
-  </div>
-</div>
-<!-- ------------------------- -->
+  .card4 {
+    grid-area: fourth;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    border-radius: 20px;
+    transition: .5s;
+    height: 300px;
+  }
 
-<!-- <div class="box right">
-  <p>in progress</p>
+  .card5 {
+    grid-area: fivth;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    border-radius: 20px;
+    transition: .5s;
+    height: 300px;
+  }
 
-  <div class="content">
-  <div class="pro">
-    <div class="img">
-      <img src=".png" alt="in progress">
-    </div>
-    <p>html __ css __ js</p>
-  </div>
-  <div class="text">
-    <p>Lorem ipsum dolor sit amet.</p>
-    <div class="links">
-      <a href="">video</a>
-      <a href="">demo live</a>
-    </div>
-  </div>
-  </div>
-</div> -->
+  .card6 {
+    grid-area: sixth;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    border-radius: 20px;
+    transition: .5s;
+    height: 300px;
+  }
 
+  .about {
+    width: 100%;
+    padding: 78px 0px;
+  }
 
+  .main {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+  }
+  .about{
+    height: auto;
+  }
+  .about img {
+    height: auto;
+    width: 70%;
+  }
+  .about h1{
+    font-size: 60px;
+  }
 
-    </div>
-  </div>
-  <!-- ----------------------------------------------------------------------------- -->
+  .about-text {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .about-text h1 {
+    width: 100%;
+    margin-left: 25%;
+    font-size: 80px;
+    margin-bottom: 5px;
+    animation: slideLeft 1.5s ease forwards;
+  }
+
+  .about-text h5 {
+    font-size: 25px;
+    text-transform: capitalize;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+    animation: slideRight 1.5s ease forwards;
+  }
+
+  .about-text p {
+    letter-spacing: 1px;
+    line-height: 28px;
+    font-size: 18px;
+    margin-bottom: 45px;
+    animation: slideTop 1s ease forwards;
+    font-weight: 600;
+    width: 90%;
+  }
+
+  .btn-box0 {
+    padding: 20px 20px;
+    border-radius: 30px;
+    font-size: 20px;
+    letter-spacing: 1px;
+    font-weight: 800;
+    text-decoration: none;
+    transition: .5s;
+    opacity: 0;
+    animation: slideLeft 2s ease forwards;
+    animation-delay: .5s;
+  }
+
+  .contact {
+    padding: 30px 0px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .contact1 {
+    width: 90%;
+    padding-top: 5px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .about .about-image {
+    width: 60%;
+  }
+
+  .wd {
+    color: var(--third-color);
+    font-size: 25px;
+    margin-top: 20px;
+    transition-duration: 1s;
+    animation: slideTop 1s ease forwards;
+    background: transparent;
+  }
+
+  .card0 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background-color: transparent;
+    width: 100%;
+    height: 70px;
+  }
+
+  .contact .form {
+    display: flex;
+    width: 100%;
+    margin: 30px 0px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .contact .form .inputBx {
+    margin: 10px 0;
+    width: 90%;
+  }
+  .reveal {
+    position: relative;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 2s ease;
+  }
   
-  <hr id="services">
-
-  <!-- ------------------------------Services------------------------------------- -->
-    <section class="servs" >
-      <div class="header reveal"><a href="#services" class="serv-btn">
-          <h1><span>OUR</span> SERVICES</h1>
-        </a></div>
-      <div class="cards">
-        <div class="txt left">
-          <p class="txt-p">What i do,</p>
-          <h1 class="txt-h1">My Skills</h1>
-        </div>
-
-        <div class="card1 hov left" id="fast-typing">
-          <svg xmlns="http://www.w3.org/2000/svg" class="kb" viewBox="0 0 16 16">
-            <path
-              d="M14 5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h12zM2 4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H2z" />
-            <path
-              d="M13 10.25a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5zm0-2a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5zm-5 0A.25.25 0 0 1 8.25 8h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 8 8.75v-.5zm2 0a.25.25 0 0 1 .25-.25h1.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-1.5a.25.25 0 0 1-.25-.25v-.5zm1 2a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5zm-5-2A.25.25 0 0 1 6.25 8h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 6 8.75v-.5zm-2 0A.25.25 0 0 1 4.25 8h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 4 8.75v-.5zm-2 0A.25.25 0 0 1 2.25 8h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 2 8.75v-.5zm11-2a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5zm-2 0a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5zm-2 0A.25.25 0 0 1 9.25 6h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 9 6.75v-.5zm-2 0A.25.25 0 0 1 7.25 6h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 7 6.75v-.5zm-2 0A.25.25 0 0 1 5.25 6h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 5 6.75v-.5zm-3 0A.25.25 0 0 1 2.25 6h1.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-1.5A.25.25 0 0 1 2 6.75v-.5zm0 4a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5zm2 0a.25.25 0 0 1 .25-.25h5.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-5.5a.25.25 0 0 1-.25-.25v-.5z" />
-          </svg>
-
-          <h1 class="h1-card">fast typing</h1>
-          <p class="p-card">I can write very quickly at a constant rate, especially when writing code, so I can complete
-            the work required of me in a short time compared to others.</p>
-        </div>
-
-
-        <div class="card2 hov reveal">
-          <svg xmlns="http://www.w3.org/2000/svg" class="kb" viewBox="0 0 16 16">
-            <path
-              d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z" />
-          </svg>
-
-          <h1 class="h1-card">clean code</h1>
-          <p class="p-card">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non atque perspiciatis consequatur!
-            Magnam quos veniam rerum quidem! Dignissimos, laborum sint.</p>
-        </div>
-
-
-        <div class="card3 hov right" id="web-design">
-          <svg xmlns="http://www.w3.org/2000/svg" class="web" viewBox="0 0 16 16">
-            <path fill-rule="evenodd"
-              d="M14 4.5V11h-1V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v9H2V2a2 2 0 0 1 2-2h5.5L14 4.5Zm-9.736 7.35v3.999h-.791v-1.714H1.79v1.714H1V11.85h.791v1.626h1.682V11.85h.79Zm2.251.662v3.337h-.794v-3.337H4.588v-.662h3.064v.662H6.515Zm2.176 3.337v-2.66h.038l.952 2.159h.516l.946-2.16h.038v2.661h.715V11.85h-.8l-1.14 2.596H9.93L8.79 11.85h-.805v3.999h.706Zm4.71-.674h1.696v.674H12.61V11.85h.79v3.325Z" />
-          </svg>
-          <svg xmlns="http://www.w3.org/2000/svg" class="web" viewBox="0 0 16 16">
-            <path fill-rule="evenodd"
-              d="M14 4.5V14a2 2 0 0 1-2 2h-1v-1h1a1 1 0 0 0 1-1V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v9H2V2a2 2 0 0 1 2-2h5.5L14 4.5ZM3.397 14.841a1.13 1.13 0 0 0 .401.823c.13.108.289.192.478.252.19.061.411.091.665.091.338 0 .624-.053.859-.158.236-.105.416-.252.539-.44.125-.189.187-.408.187-.656 0-.224-.045-.41-.134-.56a1.001 1.001 0 0 0-.375-.357 2.027 2.027 0 0 0-.566-.21l-.621-.144a.97.97 0 0 1-.404-.176.37.37 0 0 1-.144-.299c0-.156.062-.284.185-.384.125-.101.296-.152.512-.152.143 0 .266.023.37.068a.624.624 0 0 1 .246.181.56.56 0 0 1 .12.258h.75a1.092 1.092 0 0 0-.2-.566 1.21 1.21 0 0 0-.5-.41 1.813 1.813 0 0 0-.78-.152c-.293 0-.551.05-.776.15-.225.099-.4.24-.527.421-.127.182-.19.395-.19.639 0 .201.04.376.122.524.082.149.2.27.352.367.152.095.332.167.539.213l.618.144c.207.049.361.113.463.193a.387.387 0 0 1 .152.326.505.505 0 0 1-.085.29.559.559 0 0 1-.255.193c-.111.047-.249.07-.413.07-.117 0-.223-.013-.32-.04a.838.838 0 0 1-.248-.115.578.578 0 0 1-.255-.384h-.765ZM.806 13.693c0-.248.034-.46.102-.633a.868.868 0 0 1 .302-.399.814.814 0 0 1 .475-.137c.15 0 .283.032.398.097a.7.7 0 0 1 .272.26.85.85 0 0 1 .12.381h.765v-.072a1.33 1.33 0 0 0-.466-.964 1.441 1.441 0 0 0-.489-.272 1.838 1.838 0 0 0-.606-.097c-.356 0-.66.074-.911.223-.25.148-.44.359-.572.632-.13.274-.196.6-.196.979v.498c0 .379.064.704.193.976.131.271.322.48.572.626.25.145.554.217.914.217.293 0 .554-.055.785-.164.23-.11.414-.26.55-.454a1.27 1.27 0 0 0 .226-.674v-.076h-.764a.799.799 0 0 1-.118.363.7.7 0 0 1-.272.25.874.874 0 0 1-.401.087.845.845 0 0 1-.478-.132.833.833 0 0 1-.299-.392 1.699 1.699 0 0 1-.102-.627v-.495ZM6.78 15.29a1.176 1.176 0 0 1-.111-.449h.764a.578.578 0 0 0 .255.384c.07.049.154.087.25.114.095.028.201.041.319.041.164 0 .301-.023.413-.07a.559.559 0 0 0 .255-.193.507.507 0 0 0 .085-.29.387.387 0 0 0-.153-.326c-.101-.08-.256-.144-.463-.193l-.618-.143a1.72 1.72 0 0 1-.539-.214 1 1 0 0 1-.351-.367 1.068 1.068 0 0 1-.123-.524c0-.244.063-.457.19-.639.127-.181.303-.322.527-.422.225-.1.484-.149.777-.149.304 0 .564.05.779.152.217.102.384.239.5.41.12.17.187.359.2.566h-.75a.56.56 0 0 0-.12-.258.624.624 0 0 0-.246-.181.923.923 0 0 0-.37-.068c-.216 0-.387.05-.512.152a.472.472 0 0 0-.184.384c0 .121.047.22.143.3a.97.97 0 0 0 .404.175l.621.143c.217.05.406.12.566.211.16.09.285.21.375.358.09.148.135.335.135.56 0 .247-.063.466-.188.656a1.216 1.216 0 0 1-.539.439c-.234.105-.52.158-.858.158-.254 0-.476-.03-.665-.09a1.404 1.404 0 0 1-.478-.252 1.13 1.13 0 0 1-.29-.375Z" />
-          </svg>
-          <svg xmlns="http://www.w3.org/2000/svg" class="web" viewBox="0 0 16 16">
-            <path fill-rule="evenodd"
-              d="M14 4.5V14a2 2 0 0 1-2 2H8v-1h4a1 1 0 0 0 1-1V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v9H2V2a2 2 0 0 1 2-2h5.5L14 4.5ZM3.186 15.29a1.176 1.176 0 0 1-.111-.449h.765a.578.578 0 0 0 .255.384c.07.049.153.087.249.114.095.028.202.041.319.041.164 0 .302-.023.413-.07a.559.559 0 0 0 .255-.193.507.507 0 0 0 .085-.29.387.387 0 0 0-.153-.326c-.101-.08-.255-.144-.462-.193l-.619-.143a1.72 1.72 0 0 1-.539-.214 1.001 1.001 0 0 1-.351-.367 1.068 1.068 0 0 1-.123-.524c0-.244.063-.457.19-.639.127-.181.303-.322.528-.422.224-.1.483-.149.776-.149.305 0 .564.05.78.152.216.102.383.239.5.41.12.17.186.359.2.566h-.75a.56.56 0 0 0-.12-.258.624.624 0 0 0-.247-.181.923.923 0 0 0-.369-.068c-.217 0-.388.05-.513.152a.472.472 0 0 0-.184.384c0 .121.048.22.143.3a.97.97 0 0 0 .405.175l.62.143c.218.05.406.12.566.211.16.09.285.21.375.358.09.148.135.335.135.56 0 .247-.063.466-.188.656a1.216 1.216 0 0 1-.539.439c-.234.105-.52.158-.858.158-.254 0-.476-.03-.665-.09a1.404 1.404 0 0 1-.478-.252 1.13 1.13 0 0 1-.29-.375Zm-3.104-.033A1.32 1.32 0 0 1 0 14.791h.765a.576.576 0 0 0 .073.27.499.499 0 0 0 .454.246c.19 0 .33-.055.422-.164.092-.11.138-.265.138-.466v-2.745h.79v2.725c0 .44-.119.774-.357 1.005-.236.23-.564.345-.984.345a1.59 1.59 0 0 1-.569-.094 1.145 1.145 0 0 1-.407-.266 1.14 1.14 0 0 1-.243-.39Z" />
-          </svg>
-          <h1 class="h1-card">web design</h1>
-          <p class="p-card">I can create formatted websites that are coordinated according to your request. Just think
-            about the subject and leave the design to me.</p>
-        </div>
-
-
-        <div class="card4 hov left" id="responsive">
-          <svg xmlns="http://www.w3.org/2000/svg" class="phone" viewBox="0 0 16 16">
-            <path
-              d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z" />
-            <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
-          </svg>
-          <svg xmlns="http://www.w3.org/2000/svg" class="tab" viewBox="0 0 16 16">
-            <path
-              d="M12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h8zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4z" />
-            <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
-          </svg>
-          <svg xmlns="http://www.w3.org/2000/svg" class="lap" viewBox="0 0 16 16">
-            <path
-              d="M13.5 3a.5.5 0 0 1 .5.5V11H2V3.5a.5.5 0 0 1 .5-.5h11zm-11-1A1.5 1.5 0 0 0 1 3.5V12h14V3.5A1.5 1.5 0 0 0 13.5 2h-11zM0 12.5h16a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5z" />
-          </svg>
-
-          <h1 class="h1-card">responsivety</h1>
-          <p class="p-card">I can make your site responsive to all devices, even if you want specific devices, just
-            leave the site to me, and you will find results that satisfy you.</p>
-        </div>
-
-
-
-
-        <div class="card5 hov reveal">
-          <svg xmlns="http://www.w3.org/2000/svg" class="cr" viewBox="0 0 16 16">
-            <path
-              d="M13 6.5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 .5-.5zm0 3a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 .5-.5zm-.5 2.5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1h5z" />
-            <path
-              d="M14 0a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12zM2 1a1 1 0 0 0-1 1v1h14V2a1 1 0 0 0-1-1H2zM1 4v10a1 1 0 0 0 1 1h2V4H1zm4 0v11h9a1 1 0 0 0 1-1V4H5z" />
-          </svg>
-          <h1 class="h1-card">creative design</h1>
-          <p class="p-card">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non atque perspiciatis consequatur!
-            Magnam quos veniam rerum quidem! Dignissimos, laborum sint.</p>
-        </div>
-
-
-
-
-
-        <div class="card6 hov right">
-          <svg xmlns="http://www.w3.org/2000/svg" class="flag" viewBox="0 0 16 16">
-            <path
-              d="M14.778.085A.5.5 0 0 1 15 .5V8a.5.5 0 0 1-.314.464L14.5 8l.186.464-.003.001-.006.003-.023.009a12.435 12.435 0 0 1-.397.15c-.264.095-.631.223-1.047.35-.816.252-1.879.523-2.71.523-.847 0-1.548-.28-2.158-.525l-.028-.01C7.68 8.71 7.14 8.5 6.5 8.5c-.7 0-1.638.23-2.437.477A19.626 19.626 0 0 0 3 9.342V15.5a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 1 0v.282c.226-.079.496-.17.79-.26C4.606.272 5.67 0 6.5 0c.84 0 1.524.277 2.121.519l.043.018C9.286.788 9.828 1 10.5 1c.7 0 1.638-.23 2.437-.477a19.587 19.587 0 0 0 1.349-.476l.019-.007.004-.002h.001M14 1.221c-.22.078-.48.167-.766.255-.81.252-1.872.523-2.734.523-.886 0-1.592-.286-2.203-.534l-.008-.003C7.662 1.21 7.139 1 6.5 1c-.669 0-1.606.229-2.415.478A21.294 21.294 0 0 0 3 1.845v6.433c.22-.078.48-.167.766-.255C4.576 7.77 5.638 7.5 6.5 7.5c.847 0 1.548.28 2.158.525l.028.01C9.32 8.29 9.86 8.5 10.5 8.5c.668 0 1.606-.229 2.415-.478A21.317 21.317 0 0 0 14 7.655V1.222z" />
-          </svg>
-          <h1 class="h1-card">Leadership</h1>
-          <p class="p-card">Leadership is an important skill and i think i am good at it , Actually i am a team leader in my faculty with a great team and we worked together on many websites you can find in my projects section.</p>
-        </div>
-      </div>
-
-  </section>
-
-  <hr>
-  <!-- ----------------------------------------------------------------------------- -->
-
-  <!-- -------------------------About-------------------------- -->
-
-  <section id="about" class="about">
-    <h1 class="reveal"> ABOUT ME</h1>
-    <div class="main">
-
-      <div class="about-image left">
-        <img  src="samer.jpg">
-      </div>
-
-      <div class="about-text right">
-
-        <h5> Samer Mohamed</h5>
-        <p> I’m a Second-Level student at Computer and Information Science at KFS University.<br>
-          <span style="color: var(--third-color);"> I’m studying hard to achive my goal, which is being a Fullstack Web
-            Developer.</span>
-          <br><span style="color: var(--secondary-color);"> Now I’m studying Front-end development and this Portofolio
-            is a simple example of my work , <br>I hope you like it! </span>
-        </p>
-        <div class="btn-box00 right"><a href="#contact-us" class="btn-box0 right">Contact Me</a></div>
-      </div>
-  </section>
-
-
-  <!-- ----------------------------------------------------------------------------- -->
+  .reveal.active {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  .bottom {
+    position: relative;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 2s ease;
+  }
   
-  <hr id="contact-us">
-  <div class="contact">
-    
-    <section class="contact1 left" >
-
-
-          <div class="btn-boxx"><a href="#contact" class="btn-box">LET’S WORK</a></div>
-
-          <img id="image" class="image" src="samerr.jpg">
-          <h2 class="wd">WEB DEVELOPER</h2>
-
-        <div class="card0">
+  .bottom.active {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  .left {
+    position: relative;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 2s ease;
+  }
   
-          <a href="https://github.com/SamerMo11" target="_blank" class="socialContainer containerOne">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="socialSvg githubSvg"
-              viewBox="0 0 16 16">
-              <path
-                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-            </svg> </a>
+  .left.active {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  .right {
+    position: relative;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 2s ease;
+  }
   
-          <a href="https://www.linkedin.com/in/samer-mohamed-5b2586280" target="_blank"
-            class="socialContainer containerThree">
-            <svg class="socialSvg linkdinSvg" viewBox="0 0 448 512">
-              <path
-                d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z">
-              </path>
-            </svg>
-          </a>
-  
-          <a href="https://wa.me/qr/DSRQF7O6GN4JL1" target="_blank" class="socialContainer containerFour">
-            <svg class="socialSvg whatsappSvg" viewBox="0 0 16 16">
-              <path
-                d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z">
-              </path>
-            </svg>
-          </a>
-  
-          <a href="https://www.facebook.com/profile.php?id=100083281736623&mibextid=ZbWKwL" target="_blank"
-            class="socialContainer containerTwo">
-            <svg class="socialSvg facebookSvg" viewBox="0 0 16 16">
-              <path
-                d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z">
-              </path>
-            </svg>
-          </a>
-  
-        </div>
-      </section>
-  
-    
-        <div class="form right">
-      <h1>Contact Me</h1>
-      <div class="inputBx">
-        <p>Enter Name</p>
-        <input id="name-feed" type="text" placeholder="Full Name">
-      </div>
-      <div class="inputBx">
-        <p>Enter Email</p>
-        <input id="email-feed" type="text" placeholder="Your E-mail">
-      </div>
-      <div class="inputBx">
-        <p>Message</p>
-        <textarea id="txt-area" placeholder="Type here..."></textarea>
-      </div>
-      <div class="send">
-        <button id="thx">Successfully Sent</button>
-        <a id="btn-feed2" class="btn-feed2">Send</a>
-        <a id="btn-feed3" class="btn-feed3">Another-Mail</a>
+  .right.active {
+    transform: translateY(0px);
+    opacity: 1;
+  }
 
-      </div>
-  
-    </div>
-  </div>
-  <!-- ------------------------footer------------------------ -->
-  <footer>
-    <div class="container reveal">
-        <div class="row">
-              <div class="col" id="company">
-                  <img src="logo.png" alt="" class="logo">
-                  <p>
-                    We are specialized in designings, make your business a brand.
-                    Try our premium services.
-                  </p>
-                  <div class="social">
-                    <a target="_blank" href="https://github.com/SamerMo11"><i class="fab fa-github"></i></a>
-                    <a target="_blank" href="https://www.linkedin.com/in/samer-mohamed-5b2586280"><i class="fab fa-linkedin"></i></a>
-                    <a target="_blank" href="https://www.facebook.com/profile.php?id=100083281736623&mibextid=ZbWKwL"><i class="fab fa-facebook"></i></a>
-                    <a target="_blank" href="https://wa.me/qr/DSRQF7O6GN4JL1"><i class="fab fa-whatsapp"></i></a>
-                    <a target="_blank" href="https://t.me/+201065849076"><i class="fab fa-telegram"></i></a>
-                    <a target="_blank" href="https://instagram.com/samer_mohamed96?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D"><i class="fab fa-instagram"></i></a>
-                  </div>
-              </div>
-
-
-              <div class="col" id="services">
-                 <h3>Services</h3>
-                 <div class="links">
-                    <a href="#services">Web Design</a>
-                    <a href="#services">Responsivity</a>
-                    <a href="#services">Fast Typing</a>
-                    <a href="#services">Clean Code</a>
-                 </div>
-              </div>
-
-              <div class="col" id="useful-links">
-                 <h3>Links</h3>
-                 <div class="links">
-                    <a href="#about">About</a>
-                    <a href="#services">Services</a>
-                    <a href="#">Our Policy</a>
-                    <a href="#">Help</a>
-                 </div>
-              </div>
-
-              <div class="col" id="contact-foot">
-                  <h3>Contact</h3>
-                  <div class="contact-details">
-                     <i class="fa fa-location"></i>
-                     <p>Damanhour, <br> BY, EGY</p>
-                  </div><br>
-                  <div class="contact-details">
-                     <i class="fa fa-phone"></i>
-                     <p>+20 1065849076</p>
-                  </div>
-              </div>
-        </div>
-
-        <div class="row">
-              <div class="form">
-                <form action="">
-                    <input id="done2" type="email" placeholder="Email here...">
-                    <a id="done"><i  class="fa fa-paper-plane"></i></a>
-                </form>
-              </div>
-              <div class="copyright">
-              <p> CopyWright @ <span>Samer Mohamed</span></p>
-            </div>
-        </div>
-
-    </div>
- </footer>
-  <!-- -------------------------Copyright---------------------- -->
-
-  <script src="bootstrap.js"></script>
-  <script src="Portfolio.js"></script>
-</body>
-
-</html>
+}
