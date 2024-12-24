@@ -303,7 +303,7 @@ function projects() {
       name: "marvel universe",
       img: "websites/1.png",
       langs: "html _ css _  js", 
-      video:"",
+      video:"https://www.linkedin.com/posts/samer-mohamed-5b2586280_webdevelopment-webdeveloper-frontend-activity-7276253296107937793-auPm?utm_source=share&utm_medium=member_desktop",
       live:"https://samermo11.github.io/Marvel-Universe/",
       info:"- 7 pages website <br> - dynamic card details popup<br> - Dynamic Element Creation<br> - character data filtering<br> -  dark / light themes<br> - Custom-Built Slider<br> - fully responsive<br> - smart search",
       dataCard:"website"
