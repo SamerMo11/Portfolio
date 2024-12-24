@@ -2375,6 +2375,8 @@
     .home-content .para {
       height: 100px;
       animation: none;
+        opacity: 1;
+
   
   }
   .home-content .para > p {
@@ -2382,6 +2384,8 @@
     font-size: clamp(1rem, 15vw, 3rem);
     line-height: 50px;
     animation: none;
+      opacity: 1;
+      
   
   }
   
@@ -2751,9 +2755,13 @@
       display: var(--flex);
       justify-content: var(--center);
       align-items: var(--center);
+        opacity: 1;
+        animation:none;
     }
     .home-content .para > p{
       line-height: 35px;
+        opacity: 1;
+        animation:none;
     } 
   
     .about .content {
