@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
@@ -18,8 +17,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <!-- <link rel="stylesheet" href="bootstrap.css"> -->
     <title>Samer Mohamed</title>
 </head>
 
@@ -28,31 +29,52 @@
     <header>
         <a href="#" class="logo">SAMER</a>
         <ul class="nav">
-            <li>
-                <a href="#home">home</a>
+            <li >
+                <a href="#home-sec" id="home" class="nav-link"></a>
             </li>
             <li>
-                <a href="#about">about</a>
+                <a href="#about-sec" id="about" class="nav-link"></a>
             </li>
             <li>
-                <a href="#services">services</a>
+                <a href="#services-sec" id="services" class="nav-link"></a>
             </li>
             <li>
-                <a href="#projects">projects</a>
+                <a href="#projects-sec" id="projects" class="nav-link"></a>
             </li>
             <li>
-                <a href="#contact">contact</a>
+                <a href="#contact-sec" id="contact" class="nav-link"></a>
             </li>
         </ul>
         
-            <i class="fa-solid fa-moon-stars" id="moon"></i>
-            <i class="fa-solid fa-sun" id="sun"></i>
-        
-        <div class="toggle" onclick="togglemenu();"></div>
+            <div class="extra">
+                <button id="languageButton" onclick="toggleLanguage()">
+                    العربية
+                    <i class="fa-sharp fa-light fa-globe"></i>
+                    </button>
+            <div class="moods">
+                <p class="theme" id="theme">theme</p>
+                <div class="content">
+                    <span class=" color color1" style="--theme: #ea4054 ;"></span>
+                    <span class=" color color2" style="--theme: #01eeff ;"></span>
+                    <span class=" color color3" style="--theme: #cbacf9 ;"></span>
+                    <span class=" color color4" style="--theme: #FFBE7B ;"></span>
+                    <span class=" color color5" style="--theme: #b6bcbc ;"></span>
+                    <span class=" color color6" style="--theme: #FE8FB5 ;"></span>
+                    <span class=" color color7" style="--theme: #ff7259 ;"></span>
+                    <span class=" color color8" style="--theme: #dbb42c ;"></span>
+                    <i class="fa-solid fa-moon-stars" id="moon"></i>
+                    <i class="fa-solid fa-sun" id="sun"></i>
+                </div>
+            </div>
+            
+            </div>
+            <div class="toggle">
+                <span></span><span></span><span></span>
+            </div>
     </header>
     <!-- ------------------------------------- -->
     <!-- --------------ICONS----------------------- -->
-    <a href="#home">
+    <a href="#home-sec">
         <svg xmlns="http://www.w3.org/2000/svg" id="arrow" class="arrow" viewBox="0 0 16 16">
             <path
                 d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
@@ -60,31 +82,27 @@
     </a>
     <!-- ----------------------------------------------------- -->
     <!-- -------------------------Home------------------------- -->
-    <div id="home" class="home">
+    <div id="home-sec" class="home section">
         <div id="home-content" class="home-content">
-            <h2 id="light">Hello, I’m</h2>
+            <h2 id="hello">Hello, I’m</h2>
             <div class="para">
                 <p>
-                    <span class="auto-type"></span>
+                    <span class="auto-type" id="name"></span>
                 </p>
             </div>
             <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
             <script>
                 var typed = new Typed(".auto-type", {
-                    strings: ["Samer Mohamed", "Front-End Developer"],
+                    strings: ["Samer Mohamed"],
                     typeSpeed: 120,
                     backSpeed: 50,
                     loop: true,
                 });
             </script>
-            <p class="info">
-                I’am a react front end developer and freelancer, I blend creativity
-                with technical expertise to deliver sleek, responsive designs that
-                elevate brands and captivate users.
-            </p>
+            <p class="info" id="title"></p>
             <div class="more-about">
-                <a href="#about">More About Me</a>
-                <a href="#about">download cv</a>
+                <a href="#about-sec" id="more_about_me"></a>
+                <a href="#" id="download_cv"></a>
             </div>
 
         </div>
@@ -93,68 +111,61 @@
             <span></span>
             <span></span>
             <span></span>
-            <img loading="lazy" src="main/hero.jpg" alt="">
+            <img  src="main/hero.jpg" alt="SamerImg">
         </div>
     </div>
     <!-- ----------------------------------------------------------------------------- -->
     <!-- -------------------------About-------------------------- -->
-    <div id="about" class="about">
-        <p class="head reveal">about
+    <div id="about-sec" class="about section">
+        <p class="head reveal" id="about_me">about
             <span>me</span>
         </p>
         <div class="content">
             <div class="img left">
-                <img loading="lazy" src="main/about.jpg" alt="">
+                <img loading="lazy" src="main/hero.jpg" alt="">
             </div>
             <div class="infos right">
-                <p class="who">who am i ?</p>
-                <p class="name">i’m samer mohamed ,<br> front end developer</p>
-                <p>
-                    I'm Samer Mohamed, a passionate front-end developer specializing in
-                    React.js. Currently, I’m in my third year studying at the Faculty of
-                    Computer and Information Science at Kafr El Sheikh University. I
-                    enjoy creating dynamic and user-friendly web interfaces, and I'm
-                    always eager to learn and stay updated with the latest in web
-                    technologies.
+                <p class="who" id="who_am_i">who am i ?</p>
+                <!-- <p class="name" id=""><span id="about-me-name"></span> ,<br> <span id="about-me-job"></span> </p> -->
+                <p id="about-me">
+                    
                 </p>
                 <div class="details">
                     <div class="info">
-                        <p>name</p>
-                        <p>Samer Mohamed</p>
+                        <p id="name0">name</p>
+                        <p id="name2" >Samer Mohamed</p>
                     </div>
                     <div class="info">
-                        <p>phone</p>
-                        <p>01065849076</p>
+                        <p id="phone">phone</p>
+                        <p id="">01065849076</p>
                     </div>
                     <div class="info">
-                        <p>email:</p>
-                        <p class="email">samrelabd1010@gmail.com</p>
+                        <p id="email">email:</p>
+                        <p id="" class="email">samrelabd1010@gmail.com</p>
                     </div>
                     <div class="info">
-                        <p>country</p>
-                        <p>Egypt > behera > damanhour</p>
+                        <p id="country"></p>
+                        <p id="country2"></p>
                     </div>
                     <div class="info">
-                        <p>tech skills</p>
-                        <p>html , css , javaScript , sass , bootstrap , responsive design.</p>
+                        <p id="tech_skills">tech skills</p>
+                        <p id="">html , css , javaScript , sass , bootstrap , responsive design.</p>
                     </div>
                     <div class="info">
-                        <p>education</p>
-                        <p>
-                            third level student at KFSU.
-                        </p>
-                    </div>
-                    <div class="contactBtn">
-                        <a href="#contact">contact me</a>
+                        <p id="education"></p>
+                        <p id="education2"></p>
                     </div>
                 </div>
+                    <div class="contactBtn">
+                        <a href="#contact-sec" id="contact_me">contact me</a>
+                    </div>
             </div>
         </div>
     </div>
     <!-- ------------------------------Services------------------------------------- -->
-    <div class="servs" id="services">
-        <p class="head reveal">what i
-            <span>do</span>
+    <div class="servs section" id="services-sec">
+        <p class="head reveal" id="what_i">what i
+            <span id="doo">do</span>
         </p>
         <div class="cards">
             <!-- ---Js Function--- -->
@@ -162,38 +173,38 @@
     </div>
     <!-- ----------------------------------------------------------------------------- -->
     <!-- -------------------------Projects----------------------- -->
-    <div class="projects" id="projects">
-        <p class="head reveal">my
+    <div class="projects section" id="projects-sec">
+        <p class="head reveal" id="my_works">my
             <span>works</span>
         </p>
         <div class="btns reveal">
-            <button class="btn first" data-btn="all" >
+            <button class="btn first" data-btn="all" id="all">
                 all
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
+                <!-- <span></span> -->
+                <!-- <span></span> -->
+                <!-- <span></span> -->
+                <!-- <span></span> -->
             </button>
-            <button class="btn" data-btn="website">
+            <button class="btn" data-btn="website" id="websites">
                 webSites
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
+                <!-- <span></span> -->
+                <!-- <span></span> -->
+                <!-- <span></span> -->
+                <!-- <span></span> -->
             </button>
-            <button class="btn" data-btn="webpage">
+            <button class="btn" data-btn="webpage" id="webpages">
                 webPages
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
+                <!-- <span></span> -->
+                <!-- <span></span> -->
+                <!-- <span></span> -->
+                <!-- <span></span> -->
             </button>
-            <button class="btn" data-btn="others">
+            <button class="btn" data-btn="others" id="tools">
                 tools
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
+                <!-- <span></span> -->
+                <!-- <span></span> -->
+                <!-- <span></span> -->
+                <!-- <span></span> -->
             </button>
         </div>
         <!-- ------------------------- -->
@@ -207,22 +218,16 @@
     </div>
     <!-- ----------------------------------------------------------------------------- -->
     <!-- ---------------------------CONTACT--------------------------------------- -->
-    <div class="contact" id="contact">
-        <p class="head reveal">contact
-            <span>me</span>
+    <div class="contact section" id="contact-sec">
+        <p class="head reveal" id="contact2"></span>
         </p>
         <div class="content reveal">
             <div class="img ">
                 <img loading="lazy" src="main/contact.png" alt="">
             </div>
-            <p class="name">samer mohamed</p>
-            <p class="work">front end developer</p>
-            <p class="info">
-                Welcome, this is my personal website and contains all my personal and
-                group projects.
-                <br>
-                If you like my work, contact me and let's work together.
-            </p>
+            <p class="name" id="name2"></p>
+            <p class="work" id="job"></p>
+            <p class="info" id="cont_des"></p>
             <div class="accs">
                 <a class="github" target="_blank" href="https://github.com/SamerMo11">
                     <i class="fab fa-github"></i>
@@ -245,15 +250,12 @@
         </div>
     </div>
     <!-- ------------------------footer------------------------ -->
-    <footer>
+    <footer >
         <!-- <div class="container"> -->
             <!-- <div class="row"> -->
                 <div class="col left" id="company">
                     <img loading="lazy" src="main/logo.png" alt="" class="logo">
-                    <p>
-                        We are specialized in designings, make your business a brand. Try
-                        our premium services.
-                    </p>
+                    <p id="paraFooter"></p>
                     <div class="social">
                         <a target="_blank" href="https://github.com/SamerMo11">
                             <i class="fab fa-github"></i>
@@ -277,26 +279,26 @@
                         </a>
                     </div>
                 </div>
-                <div class="col reveal" id="services">
-                    <p class="head">Services</p>
+                <div class="col  right" id="services">
+                    <p class="head" id="serv"></p>
                     <div class="links">
-                        <a href="#services">Web Design</a>
-                        <a href="#services">Responsivity</a>
-                        <a href="#services">Fast Typing</a>
-                        <a href="#services">Clean Code</a>
+                        <a id="serv1" href="#services"></a>
+                        <a id="serv2" href="#services"></a>
+                        <a id="serv3" href="#services"></a>
+                        <a id="serv4" href="#services"></a>
                     </div>
                 </div>
-                <div class="col reveal" id="useful-links">
-                    <p class="head">Links</p>
+                <div class="col right" id="useful-links">
+                    <p class="head" id="links"></p>
                     <div class="links">
-                        <a href="#about">About</a>
-                        <a href="#services">Services</a>
-                        <a href="#projects">Projects</a>
-                        <a href="#contact">Contact Me</a>
+                        <a id="link1" href="#about"></a>
+                        <a id="link2" href="#services"></a>
+                        <a id="link3" href="#projects"></a>
+                        <a id="link4" href="#contact"></a>
                     </div>
                 </div>
-                <div class="col reveal" id="contact-foot">
-                    <p class="head">Contact</p>
+                <div class="col right" id="contact-foot">
+                    <p class="head" id="contactFooter"></p>
                     <div class="contact-details">
                         <i class="fa-regular fa-envelope"></i>
                         <p>samrelabd1010@gmail.com</p>
