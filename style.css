@@ -519,7 +519,7 @@ header .extra .moods .content.moodoff {
     font-size: 40px;
 }
 .home-content .accs {
-    width: 60%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
