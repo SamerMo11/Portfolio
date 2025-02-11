@@ -519,7 +519,7 @@ header .extra .moods .content.moodoff {
     font-size: 40px;
 }
 .home-content .accs {
-    width: 100%;
+    width: 60%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1735,6 +1735,9 @@ footer .col > .social a:hover {
         font-size: clamp(1rem, 15vw, 3rem);
         line-height: 50px;
         animation: none;
+    }
+    .home-content .accs {
+    width: 100%;
     }
     .home .heroImg {
         width: clamp(30vw, 70vw, 100vw);
