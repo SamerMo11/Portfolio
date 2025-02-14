@@ -1860,7 +1860,7 @@ footer .col > .social a:hover {
     .projects .all .project {
         width: 90%;
         min-height: 400px;
-        max-height: 700px;
+        max-height: 800px;
         gap: 3vh;
         flex-direction: column;
 
