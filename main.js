@@ -46,34 +46,34 @@ tab.addEventListener("click", () => {
     moods.classList.contains("moodon") ? (moods.classList.remove("moodon"), moods.classList.add("moodoff")) : (moods.classList.remove("moodoff"), moods.classList.add("moodon"));
 });
 let arr = document.getElementById("arrow");
-function reveal() {
-    for (var e = document.querySelectorAll(".reveal"), t = 0; t < e.length; t++) {
-        let o = window.innerHeight,
-            s;
-        e[t].getBoundingClientRect().top < o - 150 ? e[t].classList.add("active") : e[t].classList.remove("active");
-    }
-}
-function bottom() {
-    for (var e = document.querySelectorAll(".bottom"), t = 0; t < e.length; t++) {
-        let o = window.innerHeight,
-            s;
-        e[t].getBoundingClientRect().top < o - 150 ? e[t].classList.add("active") : e[t].classList.remove("active");
-    }
-}
-function left() {
-    for (var e = document.querySelectorAll(".left"), t = 0; t < e.length; t++) {
-        let o = window.innerHeight,
-            s;
-        e[t].getBoundingClientRect().top < o - 150 ? e[t].classList.add("active") : e[t].classList.remove("active");
-    }
-}
-function right() {
-    for (var e = document.querySelectorAll(".right"), t = 0; t < e.length; t++) {
-        let o = window.innerHeight,
-            s;
-        e[t].getBoundingClientRect().top < o - 150 ? e[t].classList.add("active") : e[t].classList.remove("active");
-    }
-}
+// function reveal() {
+//     for (var e = document.querySelectorAll(".reveal"), t = 0; t < e.length; t++) {
+//         let o = window.innerHeight,
+//             s;
+//         e[t].getBoundingClientRect().top < o - 150 ? e[t].classList.add("active") : e[t].classList.remove("active");
+//     }
+// }
+// function bottom() {
+//     for (var e = document.querySelectorAll(".bottom"), t = 0; t < e.length; t++) {
+//         let o = window.innerHeight,
+//             s;
+//         e[t].getBoundingClientRect().top < o - 150 ? e[t].classList.add("active") : e[t].classList.remove("active");
+//     }
+// }
+// function left() {
+//     for (var e = document.querySelectorAll(".left"), t = 0; t < e.length; t++) {
+//         let o = window.innerHeight,
+//             s;
+//         e[t].getBoundingClientRect().top < o - 150 ? e[t].classList.add("active") : e[t].classList.remove("active");
+//     }
+// }
+// function right() {
+//     for (var e = document.querySelectorAll(".right"), t = 0; t < e.length; t++) {
+//         let o = window.innerHeight,
+//             s;
+//         e[t].getBoundingClientRect().top < o - 150 ? e[t].classList.add("active") : e[t].classList.remove("active");
+//     }
+// }
 function skills() {
     let k = document.querySelector(".skills .cards ");
     [
@@ -147,12 +147,21 @@ function projects() {
     let e = document.querySelector(".projects .all ");
     [
         {
+            name: "reemoCandle store",
+            img: "websites/7.webp",
+            langs: "reactjs <span> __ </span> react router <span> __ </span> framer motion",
+            video: "https://www.linkedin.com/posts/samer-mohamed-5b2586280_sololeveling-react-framermotion-activity-7313577759836979200-3qlb?utm_source=share&utm_medium=member_desktop&rcm=ACoAAERtr9YB_v8iR-75E56RlgoqTGxjiI9im7U",
+            live: "https://reemo-candle-store.netlify.app/",
+            // info: "soon !!",
+            dataCard: "website",
+        },
+        {
             name: "solo leveling",
             img: "websites/6.webp",
             langs: "reactjs <span> __ </span> react router <span> __ </span> framer motion",
-            video: "#",
-            live: "#",
-            info: "soon !!",
+            video: "https://www.linkedin.com/posts/samer-mohamed-5b2586280_sololeveling-react-framermotion-activity-7313577759836979200-3qlb?utm_source=share&utm_medium=member_desktop&rcm=ACoAAERtr9YB_v8iR-75E56RlgoqTGxjiI9im7U",
+            live: "https://sololeveling-arise.netlify.app/",
+            // info: "soon !!",
             dataCard: "website",
         },
         {
@@ -161,7 +170,7 @@ function projects() {
             langs: "html <span> __ </span> css <span> __ </span> js",
             video: "https://www.linkedin.com/posts/samer-mohamed-5b2586280_webdevelopment-webdeveloper-frontend-activity-7276253296107937793-auPm?utm_source=share&utm_medium=member_desktop",
             live: "https://samermo11.github.io/Marvel-Universe/",
-            info: "7 pages website   <span> | </span> dynamic card details popup <span> | </span> Dynamic Element Creation  <span> | </span> character data filtering  <span> | </span>  dark / light themes  <span> | </span> Custom-Built Slider  <span> | </span> fully responsive  <span> | </span> smart search",
+            // info: "7 pages website   <span> | </span> dynamic card details popup <span> | </span> Dynamic Element Creation  <span> | </span> character data filtering  <span> | </span>  dark / light themes  <span> | </span> Custom-Built Slider  <span> | </span> fully responsive  <span> | </span> smart search",
             dataCard: "website",
         },
         {
@@ -170,7 +179,7 @@ function projects() {
             langs: "html <span> __ </span> css <span> __ </span> js",
             video: "https://www.linkedin.com/posts/samer-mohamed-5b2586280_html-css-javascript-activity-7249836916961857536-97b4?utm_source=share&utm_medium=member_desktop",
             live: "https://samermo11.github.io/NFTs/",
-            info: "Add to Cart functionality .  <span> | </span> Saved Favorites in local storage .   <span> | </span> Smart Search .   <span> | </span> Category Filtering .   <span> | </span> Fully Responsive .   <span> | </span> Custom-Built Slider .   <span> | </span> Dynamic Element Creation .",
+            // info: "Add to Cart functionality .  <span> | </span> Saved Favorites in local storage .   <span> | </span> Smart Search .   <span> | </span> Category Filtering .   <span> | </span> Fully Responsive .   <span> | </span> Custom-Built Slider .   <span> | </span> Dynamic Element Creation .",
             dataCard: "webpage",
         },
         {
@@ -179,7 +188,7 @@ function projects() {
             langs: "html <span> __ </span> css <span> __ </span> js",
             video: "https://www.linkedin.com/posts/samer-mohamed-5b2586280_html-css-javascript-activity-7212145172527108096-oEJp?utm_source=share&utm_medium=member_desktop",
             live: "https://samermo11.github.io/Cars/",
-            info: " 4 stunning themes  <span> | </span> Responsive design   <span> | </span> creative animation   <span> | </span> Explore the latest in car technology and trends \uD83D\uDE80",
+            // info: " 4 stunning themes  <span> | </span> Responsive design   <span> | </span> creative animation   <span> | </span> Explore the latest in car technology and trends \uD83D\uDE80",
             dataCard: "webpage",
         },
         {
@@ -188,7 +197,7 @@ function projects() {
             langs: "html <span> __ </span> css <span> __ </span> js",
             video: "https://www.linkedin.com/posts/samer-mohamed-5b2586280_html-css-javascript-activity-7245397154247135232-ptR4?utm_source=share&utm_medium=member_desktop",
             live: "https://samermo11.github.io/in-Allah-mercy/",
-            info: "Smooth Navigation   <span> | </span> Categorized Content   <span> | </span> Random Selecting   <span> | </span> Responsive Design",
+            // info: "Smooth Navigation   <span> | </span> Categorized Content   <span> | </span> Random Selecting   <span> | </span> Responsive Design",
             dataCard: "webpage",
         },
         {
@@ -197,7 +206,7 @@ function projects() {
             langs: "html <span> __ </span> css <span> __ </span> js",
             video: "https://www.linkedin.com/posts/samer-mohamed-5b2586280_html5-html5-css-activity-7151624825881407489-rUyG?utm_source=share&utm_medium=member_desktop",
             live: "https://samermo11.github.io/Spider-Verse/",
-            info: "new design   <span> | </span> character filtering   <span> | </span> Independent data for each character   <span> | </span> creative animation",
+            // info: "new design   <span> | </span> character filtering   <span> | </span> Independent data for each character   <span> | </span> creative animation",
             dataCard: "webpage",
         },
         {
@@ -206,16 +215,16 @@ function projects() {
             langs: "html <span> __ </span> css <span> __ </span> js",
             video: "https://www.linkedin.com/posts/samer-mohamed-5b2586280_webdevelopment-frontend-html-activity-7144307855276371969-NLw-?utm_source=share&utm_medium=member_desktop",
             live: "https://samermo11.github.io/Bat-Man/",
-            info: "lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem",
+            // info: "lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem",
             dataCard: "webpage",
         },
         {
             name: "remoFlowery",
             img: "webpages/4.webp",
-            langs: "html_css",
+            langs: "html <span> __ </span> css",
             video: "https://www.linkedin.com/posts/samer-mohamed-5b2586280_remoflowery-flowerlovers-uiuxdesign-activity-7232085304956882945-hsMg?utm_source=share&utm_medium=member_desktop",
-            live: "",
-            info: "lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem",
+            live: "https://samermo11.github.io/RemoFlowery/",
+            // info: "lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem",
             dataCard: "webpage",
         },
         {
@@ -224,7 +233,7 @@ function projects() {
             langs: "html <span> __ </span> css <span> __ </span> js",
             video: "https://www.linkedin.com/posts/samer-mohamed-5b2586280_new-project-responsive-gaming-website-for-activity-7114199072869134336-VZLn?utm_source=share&utm_medium=member_desktop",
             live: "https://samermo11.github.io/gaming-store/",
-            info: "lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem",
+            // info: "lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem",
             dataCard: "webpage",
         },
         {
@@ -243,7 +252,7 @@ function projects() {
             langs: "html <span> __ </span> css <span> __ </span> js",
             video: "https://www.linkedin.com/posts/samer-mohamed-5b2586280_exciting-news-im-thrilled-to-announce-activity-7196603245832597504-ncbI?utm_source=share&utm_medium=member_desktop",
             live: "https://samermo11.github.io/to-do-list/",
-            info: "Add tasks   <span> | </span> save tasks in local storage   <span> | </span> mark ended tasks   <span> | </span> remove tasks",
+            // info: "Add tasks   <span> | </span> save tasks in local storage   <span> | </span> mark ended tasks   <span> | </span> remove tasks",
             dataCard: "others",
         },
         {
@@ -252,7 +261,7 @@ function projects() {
             langs: "html <span> __ </span> css <span> __ </span> js",
             video: "https://www.linkedin.com/posts/samer-mohamed-5b2586280_new-project-with-html-css-and-js-it-activity-7104889993206071298-Lmgp?utm_source=share&utm_medium=member_desktop",
             live: "https://samermo11.github.io/Tic-Tac-Toi/",
-            info: "lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem",
+            // info: "lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem",
             dataCard: "others",
         },
         {
@@ -261,7 +270,7 @@ function projects() {
             langs: "html <span> __ </span> css <span> __ </span> js",
             video: "https://www.linkedin.com/posts/samer-mohamed-5b2586280_html-css-js-activity-7083869556242333697-ZJta?utm_source=share&utm_medium=member_desktop",
             live: "https://samermo11.github.io/Calculator_Project/",
-            info: "lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem",
+            // info: "lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem",
             dataCard: "others",
         },
         {
@@ -270,7 +279,7 @@ function projects() {
             langs: "html _ css _ js",
             video: "https://www.linkedin.com/posts/samer-mohamed-5b2586280_html-css-js-activity-7089669886536265728-CL3Z?utm_source=share&utm_medium=member_desktop",
             live: "https://samermo11.github.io/Keyboard_Project/",
-            info: "lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem",
+            // info: "lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem",
             dataCard: "others",
         },
         {
@@ -280,7 +289,7 @@ function projects() {
             video:
                 "https://www.linkedin.com/posts/samer-mohamed-5b2586280_new-project-with-new-idea-%D8%A7%D9%84%D9%81%D9%83%D8%B1%D8%A9-%D9%85%D9%86-%D8%A7%D9%84%D8%A8%D9%8A%D8%AF%D8%AC-activity-7095814287335526400-1r9D?utm_source=share&utm_medium=member_desktop",
             live: "https://samermo11.github.io/Home-Tab/",
-            info: "lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem",
+            // info: "lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem",
             dataCard: "others",
         },
         { name: "smart-tech",
@@ -288,7 +297,7 @@ function projects() {
             langs: "figma <span> __ </span> html <span> __ </span> css <span> __ </span> js <span> __ </span> json <span> __ </span> aSP .net <span> __ </span> sQL server",
             video: "https://www.linkedin.com/posts/samer-mohamed-5b2586280_webdevelopment-webdesign-webdeveloper-activity-7293689978583171072-vRLD?utm_source=share&utm_medium=member_desktop",
             live: "https://samermo11.github.io/Smart-Tech/",
-            info: "soon!!",
+            // info: "soon!!",
             dataCard: "team" 
         },
         {
@@ -297,7 +306,7 @@ function projects() {
             langs: "html <span> __ </span> css <span> __ </span> js <span> __ </span> json <span> __ </span> aSP .net <span> __ </span> sQL server",
             video: "https://www.linkedin.com/posts/samer-mohamed-5b2586280_webdevelopment-frontenddeveloper-backenddeveloper-activity-7217895659348099072-Beoi?utm_source=share&utm_medium=member_desktop",
             live: "https://samermo11.github.io/Restaurant/",
-            info: "10 pages website   <span> | </span> editable user profile   <span> | </span> order meals with stripe payment   <span> | </span> add to cart functionality   <span> | </span> add to favourite functionality  <span> | </span> login & sign validation",
+            // info: "10 pages website   <span> | </span> editable user profile   <span> | </span> order meals with stripe payment   <span> | </span> add to cart functionality   <span> | </span> add to favourite functionality  <span> | </span> login & sign validation",
             dataCard: "team",
         },
         {
@@ -306,7 +315,7 @@ function projects() {
             langs: "html <span> __ </span> css <span> __ </span> js <span> __ </span> json <span> __ </span> php <span> __ </span> my sQL",
             video: "https://www.linkedin.com/posts/samer-mohamed-5b2586280_webdevelopment-html-css-activity-7143632404757336066-l3KK?utm_source=share&utm_medium=member_desktop",
             live: "https://samermo11.github.io/Airline--system/",
-            info: "lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem",
+            // info: "lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem   <span> | </span> lorem lorem lorem lorem",
             dataCard: "team",
         },
         
@@ -317,7 +326,7 @@ function projects() {
                     <p id="${t.name}">${t.name}</p>
                     <img src="${t.img}" alt="ProjectImg" loading="lazy">    
                     <div class="plinks">
-                                        <a href="${t.live}" target="_blank">demo live</a>
+                    <a href="${t.live}" target="_blank">demo live</a>
                     <a href="${t.video}" target="_blank">video</a>
                     </div>
 
@@ -328,24 +337,25 @@ function projects() {
                     <span>tech skills</span>
                     <p class="plangs">${t.langs}</p>
                         </div>
-                            <div>
-                    <span>features</span>
-                    <p> 
-                    ${t.info}
-                    </p>
-                            </div>
+                            
                     </div>
             </div>
           `;
     });
 }
+                    // <div>
+                    // <span>features</span>
+                    // <p> 
+                    // ${t.info}
+                    // </p>
+                    //         </div>
 (window.onscroll = function () {
     scrollY >= 660 ? (arr.style.display = "block") : (arr.style.display = "none");
 }),
-    window.addEventListener("scroll", reveal),
-    window.addEventListener("scroll", bottom),
-    window.addEventListener("scroll", left),
-    window.addEventListener("scroll", right),
+    // window.addEventListener("scroll", reveal),
+    // window.addEventListener("scroll", bottom),
+    // window.addEventListener("scroll", left),
+    // window.addEventListener("scroll", right),
     servs(),
     skills(),
     projects();

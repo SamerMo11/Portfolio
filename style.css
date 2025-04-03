@@ -137,7 +137,7 @@ header .extra button {
     bottom: 5px;
     right: 20px;
     text-decoration: none;
-    animation: 1s linear infinite alternate back;
+    /* animation: 1s linear infinite alternate back; */
     height: 40px;
     width: 40px;
     z-index: 1;
@@ -255,8 +255,8 @@ header {
     border-bottom-right-radius: 20px;
     border-bottom-left-radius: 20px;
     direction: ltr;
-    animation: 2s linear forwards header;
-    opacity: 0;
+    /* animation: 2s linear forwards header; */
+    /* opacity: 0; */
 }
 @keyframes header {
     from {
@@ -338,7 +338,7 @@ header ul li a:hover::before {
 #sun {
     font-size: 25px;
     cursor: pointer;
-    animation: 1s linear scale;
+    /* animation: 1s linear scale; */
 }
 @keyframes scale {
     0% {
@@ -466,14 +466,14 @@ header .extra .moods .content.moodoff {
     align-items: var(--center);
     overflow: hidden;
     padding: 10px;
-    animation: 2s forwards slideright;
+    /* animation: 2s forwards slideright; */
 }
-.home-content .para,
+/* .home-content .para,
 .home-content h2,
 .home-content p,
 .more-about {
     animation: 2s forwards slideleft;
-}
+} */
 .home .heroImg img {
     width: 100%;
     height: 100%;
@@ -506,7 +506,7 @@ header .extra .moods .content.moodoff {
 }
 .home-content p {
     font-size: 20px;
-    opacity: 0;
+    /* opacity: 0; */
     line-height: 30px;
     text-transform: capitalize;
 }
@@ -523,7 +523,7 @@ header .extra .moods .content.moodoff {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    animation: 2s forwards slideleft;
+    /* animation: 2s forwards slideleft; */
 
 }
 .home-content .accs a {
@@ -580,6 +580,7 @@ header .extra .moods .content.moodoff {
 .home-content .accs .insta::before {
     background-image: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
 }
+.contactBtn,
 .more-about {
     width: 60%;
     display: var(--flex);
@@ -774,9 +775,9 @@ header .extra .moods .content.moodoff {
     overflow: hidden;
     border-radius: 10px;
     border: 2px solid var(--fourth-color);
-    animation-name: left;
+    /* animation-name: left;
     animation-range: 0px 350px;
-    animation-timeline: view();
+    animation-timeline: view(); */
 }
 .servs .cards .card::before {
     content: "";
@@ -1004,7 +1005,7 @@ header .extra .moods .content.moodoff {
     cursor: pointer;
     text-decoration: none;
     transition: 1s;
-    animation: 1.5s forwards slideLeft;
+    /* animation: 1.5s forwards slideLeft; */
     font-size: 18px;
     box-shadow: 0 0 25px var(--primary-color);
     border: 2px solid var(--third-color);
@@ -1017,7 +1018,7 @@ header .extra .moods .content.moodoff {
     border-radius: 50px;
     height: 5px;
     background-image: linear-gradient(to right, #000 50%, var(--third-color));
-    animation: 2s linear infinite span1;
+    /* animation: 2s linear infinite span1; */
 }
 @keyframes span1 {
     0% {
@@ -1035,7 +1036,7 @@ header .extra .moods .content.moodoff {
     border-radius: 50px;
     height: 100%;
     background-image: linear-gradient(to bottom, var(--third-color), #000 50%);
-    animation: 2s linear infinite span2;
+    /* animation: 2s linear infinite span2; */
 }
 @keyframes span2 {
     0% {
@@ -1053,7 +1054,7 @@ header .extra .moods .content.moodoff {
     border-radius: 50px;
     height: 5px;
     background-image: linear-gradient(to left, #000 50%, var(--third-color));
-    animation: 2s linear infinite span3;
+    /* animation: 2s linear infinite span3; */
 }
 @keyframes span3 {
     0% {
@@ -1071,7 +1072,7 @@ header .extra .moods .content.moodoff {
     border-radius: 50px;
     height: 100%;
     background-image: linear-gradient(to top, var(--third-color) 50%, #000);
-    animation: 2s linear infinite span4;
+    /* animation: 2s linear infinite span4; */
 }
 @keyframes span4 {
     0% {
@@ -1099,25 +1100,25 @@ header .extra .moods .content.moodoff {
     display: var(--flex);
     justify-content: var(--space-bet);
     align-items: start;
-    /* flex-direction: column; */
-    width: 100%;
-    height: 400px;
-    min-height: 400px;
-    max-height: 450px;
+    flex-direction: column;
+    width: 45%;
+    height: 60vh;
+    /* min-height: 400px; */
+    /* max-height: 450px; */
     gap: 15px;
     border: 2px solid var(--third-color);
     border-radius: 10px;
     padding: 20px 10px;
     position: relative;
-    transition-behavior: allow-discrete;
-    transition-property: overlay display opacity scale translate;
-    transition-duration: 0s;
-    transform: scale(0);
-    opacity: 0;
-    animation-name: box;
+    /* transition-behavior: allow-discrete; */
+    /* transition-property: overlay display opacity scale translate; */
+    /* transition-duration: 0s; */
+    /* transform: scale(0); */
+    /* opacity: 0; */
+    /* animation-name: box;
     animation-timeline: view();
     animation-range: 50px 350px;
-    animation-fill-mode: forwards;
+    animation-fill-mode: forwards; */
 }
 @keyframes box {
     to {
@@ -1133,30 +1134,10 @@ header .extra .moods .content.moodoff {
     display: none;
     opacity: 0;
 }
-/* .projects .all .project .head {
-    display: var(--flex);
-    justify-content: var(--space-bet);
-    align-items: var(--center);
-    width: 100%;
-    height: 20%;
-} */
 
-/* .projects .all .project .head p:nth-child(2) {
-    text-transform: capitalize;
-    color: var(--third-color);
-    font-size: 25px;
-} */
-/* .projects .all .project .content {
-    display: var(--flex);
-    justify-content: var(--space-bet);
-    align-items: var(--center);
-    flex-wrap: wrap;
-    width: 100%;
-    height: 100%;
-} */
 .projects .all .project .leftt {
-    width: 40%;
-    height: 100%;
+    width: 100%;
+    height: 60%;
     display: var(--flex);
     justify-content: space-evenly;
     align-items: var(--center);
@@ -1173,8 +1154,8 @@ header .extra .moods .content.moodoff {
     border-radius: 10px;
 }
 .projects .all .project .leftt img {
-    width: 100%;
-    height: 60%;
+    width: 70%;
+    height: 80%;
     /* object-fit: contain; */
     border: 1px solid var(--third-color);
     border-radius: 5px;
@@ -1192,8 +1173,21 @@ header .extra .moods .content.moodoff {
     position: relative;
     color: var(--primary-color);
     font-family: Fredoka, sans-serif;
+    background-color: var(--third-color);
+    transition: .5s;
 }
-.projects .all .project .leftt .plinks a::after,
+.projects .all .project .leftt .plinks a:nth-child(1):hover{
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+}
+.projects .all .project .leftt .plinks a:nth-child(2){
+    background-color: var(--secondary-color);
+}
+.projects .all .project .leftt .plinks a:nth-child(2):hover{
+    background-color: var(--third-color);
+    border-radius: 10px;
+}   
+/* .projects .all .project .leftt .plinks a::after,
 .projects .all .project .leftt .plinks a::before {
     content: "";
     position: absolute;
@@ -1202,18 +1196,20 @@ header .extra .moods .content.moodoff {
     transform: skew(-20deg);
     z-index: -1;
     transition: 0.5s;
-}
-.projects .all .project .leftt .plinks a::before {
+} */
+/* .projects .all .project .leftt .plinks a::before {
     width: 100%;
     height: 100%;
 }
 .projects .all .project .leftt .plinks a::after {
     width: 0%;
     height: 100%;
+    z-index: -1;
 }
 .projects .all .project .leftt .plinks a:nth-child(1) {
     color: var(--fourth-color);
     transition: 1s;
+    background-color: var(--secondary-color);
 }
 .projects .all .project .leftt .plinks a:nth-child(1)::before {
     background: var(--third-color);
@@ -1221,7 +1217,7 @@ header .extra .moods .content.moodoff {
 .projects .all .project .leftt .plinks a:nth-child(1):hover::after {
     width: 100%;
     height: 100%;
-    background: var(--secondary-color);
+    background: var(--third-color);
 }
 .projects .all .project .leftt .plinks a:nth-child(2) {
     color: var(--fourth-color);
@@ -1232,7 +1228,7 @@ header .extra .moods .content.moodoff {
 .projects .all .project .leftt .plinks a:nth-child(2):hover::after {
     width: 100%;
     background: var(--third-color);
-}
+} */
 .projects .all .project  > p {
     width: 45%;
     display: var(--flex);
@@ -1246,8 +1242,8 @@ header .extra .moods .content.moodoff {
     font-family: Fredoka, sans-serif;
 }
 .projects .all .project .rightt{
-    width: 50%;
-    height: 100%;
+    width: 100%;
+    height: 20%;
     display: var(--flex);
     justify-content: start;
     align-items: start;
@@ -1270,7 +1266,7 @@ header .extra .moods .content.moodoff {
 }
 .projects .all .project .rightt > div span{
     color: var(--third-color);
-    font-size: 30px;
+    font-size: 25px;
     text-transform: capitalize;
 }
 /* .projects .all .project .rightt div p:nth-child(1), */
@@ -1281,14 +1277,14 @@ header .extra .moods .content.moodoff {
     align-items: center ;
     /* flex-direction: column; */
     text-transform: capitalize;
-    font-size: 16px;
+    font-size: 14px;
     height: 100%;
     width: 100%;
     flex-wrap: wrap;
     gap: 10px;
 }
 .projects .all .project .rightt div .plangs{
-    font-size: 20px;
+    font-size: 16px;
 }
 .projects .all .project .rightt div .plangs span{
     font-size: 16px;
@@ -1859,11 +1855,14 @@ footer .col > .social a:hover {
     }
     .projects .all .project {
         width: 90%;
-        min-height: 400px;
-        max-height: 800px;
+        height: clamp(20vw, 125vw, 200vw);
         gap: 3vh;
         flex-direction: column;
-
+        padding-block: 5vw;
+        justify-content: space-evenly;
+    }
+    .projects .all .project .leftt img {
+        width: 100%;
     }
     .projects .all .project .head {
         flex-direction: column;
@@ -1872,11 +1871,7 @@ footer .col > .social a:hover {
     .projects .all .project .head p:first-child {
         font-size: clamp(1rem, 8vw, 4rem);
     }
-    .projects .all .project {
-        flex-direction: column;
-        gap: 3vh;
-        height: auto;
-    }
+    
     .projects .all .project .leftt {
         width: 100%;
         justify-content: space-evenly;
@@ -1986,9 +1981,9 @@ footer .col > .social a:hover {
     .home {
         padding-inline: 25px;
     }
-    .home .heroImg {
+    /* .home .heroImg {
         animation: 2s forwards left;
-    }
+    } */
     .home-content {
         width: 50%;
         align-items: start;
