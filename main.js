@@ -150,7 +150,7 @@ function projects() {
             name: "reemoCandle store",
             img: "websites/7.webp",
             langs: "reactjs <span> __ </span> react router <span> __ </span> framer motion",
-            video: "https://www.linkedin.com/in/samer-mohamed-5b2586280/",
+            video: "https://www.linkedin.com/posts/samer-mohamed-5b2586280_reactjs-frontenddevelopment-webdesign-activity-7317934065301512195-j7TM?utm_source=share&utm_medium=member_desktop&rcm=ACoAAERtr9YB_v8iR-75E56RlgoqTGxjiI9im7U",
             live: "https://reemo-candle-store.netlify.app/",
             // info: "soon !!",
             dataCard: "website",
