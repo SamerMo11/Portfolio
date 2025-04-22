@@ -880,14 +880,14 @@ header .extra .moods .content.moodoff {
     transition: 0.5s;
     border-radius: 50%;
     border: 10px solid transparent;
-    background: radial-gradient(var(--third-color), var(--fivth-color), var(--fivth-color), var(--third-color), var(--fivth-color), var(--fivth-color));
+    background: radial-gradient(var(--third-color),var(--third-color), var(--fivth-color), var(--fivth-color), var(--third-color), var(--fivth-color), var(--fivth-color));
     background-size: 600% 600%;
     mask: linear-gradient(#000 0 0) padding-box, linear-gradient(#000 0 0);
     mask-composite: exclude;
-    animation-name: rot;
+    /* animation-name: rot;
     animation-duration: 12s;
     animation-timing-function: linear;
-    animation-iteration-count: infinite;
+    animation-iteration-count: infinite; */
 }
 @keyframes rot {
     0%,
@@ -1452,6 +1452,8 @@ footer .col:first-child {
 }
 footer .col > img {
     width: 70%;
+    height: 18vh;
+
 }
 footer .col:first-child > p {
     color: #edf2fc;
@@ -1931,7 +1933,8 @@ footer .col > .social a:hover {
         padding-block: 5vh 10vh;
     }
     footer .col > img {
-        width: 60%;
+        width: 65%;
+        height: 30vw;
     }
     footer .col {
         width: 90%;
