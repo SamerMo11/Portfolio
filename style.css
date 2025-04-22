@@ -1245,7 +1245,7 @@ header .extra .moods .content.moodoff {
     width: 100%;
     height: 20%;
     display: var(--flex);
-    justify-content: start;
+    justify-content: space-between;
     align-items: start;
     flex-direction: column;
     /* flex-wrap: wrap; */
@@ -1257,13 +1257,9 @@ header .extra .moods .content.moodoff {
     align-items: start;
     flex-direction: column;
     width: 100%;
+    height: 100%;
 }
-.projects .all .project .rightt div:nth-child(1){
-    height: auto;
-}
-.projects .all .project .rightt div:nth-child(2){
-    height: auto;
-}
+
 .projects .all .project .rightt > div span{
     color: var(--third-color);
     font-size: 25px;
