@@ -159,7 +159,7 @@ function projects() {
             name: "el-Samurai Training",
             img: "websites/8.webp",
             langs: "reactjs <span> __ </span> react router <span> __ </span> framer motion",
-            video: "https://www.linkedin.com/in/samer-mohamed-5b2586280/",
+            video: "https://www.linkedin.com/posts/samer-mohamed-5b2586280_react-framermotion-css3-activity-7316172296405053440-qXqe?utm_source=share&utm_medium=member_desktop&rcm=ACoAAERtr9YB_v8iR-75E56RlgoqTGxjiI9im7U",
             live: "https://elsamurai-basketball-website.netlify.app/",
             // info: "soon !!",
             dataCard: "website",
